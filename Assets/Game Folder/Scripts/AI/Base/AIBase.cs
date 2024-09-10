@@ -16,5 +16,4 @@ public abstract class AIBase : MonoBehaviour
     }
 
     virtual public Transform getOrigin() { return this.transform; }
-    virtual public NavMeshAgent getNavmeshAgent() { return this.getNavmeshAgent(); }
 }
