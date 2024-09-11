@@ -1,10 +1,15 @@
 using Cinemachine;
-using System.Collections;
-using System.Collections.Generic;
 using Unity.Mathematics;
 using Unity.Netcode;
 using UnityEngine;
-using UnityEngine.ProBuilder;
+
+public enum PlayerState
+{
+    FREE,
+    TAKING_ITEM,
+    PHONE,
+    DRIVING
+}
 
 public class CharacterCont : NetworkBehaviour
 {
@@ -13,6 +18,7 @@ public class CharacterCont : NetworkBehaviour
     [SerializeField] CinemachineVirtualCamera virtualCamera;
     [SerializeField] GameObject face;
     [SerializeField] GameObject UI;
+    [SerializeField] PlayerState state;
 
     [Header("Player Speed")]
     [SerializeField] private float moveSpeed;
@@ -33,6 +39,7 @@ public class CharacterCont : NetworkBehaviour
     void Start()
     {
         characterController = GetComponent<CharacterController>();
+        state = PlayerState.FREE;
         //virtualCamera = GetComponent<CinemachineVirtualCamera>();
     }
 

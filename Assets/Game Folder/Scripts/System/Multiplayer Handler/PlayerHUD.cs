@@ -11,11 +11,16 @@ public class PlayerHUD : NetworkBehaviour
 
     [SerializeField] private TextMeshProUGUI myUGUI;
 
+    [SerializeField] private GameObject obj;
+
     public override void OnNetworkSpawn()
     {
         if (IsOwner)
         {
-            playerName.Value = GameObject.FindGameObjectWithTag("PlayerNameEditor").GetComponent<TMP_InputField>().text;
+            obj = GameObject.FindGameObjectWithTag("NetworkUIManager");
+            var gc = obj.GetComponent<LobbyHandler>();
+            playerName.Value = gc.getPLayerName();
+            myUGUI.gameObject.SetActive(true);
         }
 
         myUGUI.text = playerName.Value.ToString();

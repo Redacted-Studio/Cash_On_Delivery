@@ -1,14 +1,9 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Net.NetworkInformation;
 using TMPro;
 using Unity.Netcode;
 using Unity.Netcode.Transports.UTP;
 using UnityEngine;
-using UnityEngine.Networking.PlayerConnection;
 using UnityEngine.UI;
 
 public class LobbyHandler : MonoBehaviour
@@ -26,6 +21,8 @@ public class LobbyHandler : MonoBehaviour
     [SerializeField] TMP_InputField IPConfiguration;
     [SerializeField] TMP_InputField playerName;
 
+    string LocalPlayerName;
+
     // Start is called before the first frame update
     private void Awake()
     {
@@ -34,7 +31,7 @@ public class LobbyHandler : MonoBehaviour
         ClientButt.onClick.AddListener(Clientthandler);
         StopButt.onClick.AddListener(Disconnecthandler);
         IPConfiguration.onValueChanged.AddListener(validateIPAddress);
-
+        playerName.onValueChanged.AddListener(setPlayerName);
         ClientButt.interactable = false;
 
         DontDestroyOnLoad(this);
@@ -58,6 +55,16 @@ public class LobbyHandler : MonoBehaviour
             ClientButt.interactable = true;
             setIP(text);
         } else ClientButt.interactable = false;
+    }
+
+    public string getPLayerName()
+    {
+        return LocalPlayerName;
+    }
+
+    void setPlayerName(string name)
+    {
+        LocalPlayerName = name;
     }
 
     public bool ValidateIPv4(string ipString)

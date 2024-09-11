@@ -70,8 +70,8 @@ GameObject:
   - component: {fileID: 2487726493786722906}
   - component: {fileID: 4137019109133575602}
   - component: {fileID: 2668692248872407460}
-  - component: {fileID: 3801435445513999633}
   - component: {fileID: 5614735122084932146}
+  - component: {fileID: 3801435445513999633}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -165,10 +165,24 @@ MonoBehaviour:
   virtualCamera: {fileID: 9207917341086759416}
   face: {fileID: 3189156111427387341}
   UI: {fileID: 7371975126086373695}
+  state: 0
   moveSpeed: 5
   gravity: 9.81
   jumpHeight: 0.2
   mouseSens: 180
+--- !u!114 &5614735122084932146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 243847927988228792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21e044c753937ce408e4adfc8c0df59e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myUGUI: {fileID: 8845536531748442998}
 --- !u!143 &3801435445513999633
 CharacterController:
   m_ObjectHideFlags: 0
@@ -195,19 +209,6 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5614735122084932146
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 243847927988228792}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21e044c753937ce408e4adfc8c0df59e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myUGUI: {fileID: 8845536531748442998}
 --- !u!1 &793662311983701533
 GameObject:
   m_ObjectHideFlags: 0
@@ -633,7 +634,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0.833}
+  m_AnchoredPosition: {x: 0, y: 1.61}
   m_SizeDelta: {x: 6.4608, y: 1.1477}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5327347141641651412
