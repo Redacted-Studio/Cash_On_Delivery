@@ -103,7 +103,7 @@ public class CharacterCont : NetworkBehaviour
 
             if (Input.GetButtonDown("Jump"))
             {
-                verticalVel = math.sqrt(jumpHeight * gravity);
+                verticalVel = math.sqrt(jumpHeight * gravity * 2);
             }
 
         } else

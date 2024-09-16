@@ -110,7 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 1045041483
+  GlobalObjectIdHash: 882730398
   InScenePlacedSourceGlobalObjectIdHash: 882730398
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -166,10 +166,10 @@ MonoBehaviour:
   face: {fileID: 3189156111427387341}
   UI: {fileID: 7371975126086373695}
   state: 0
-  moveSpeed: 5
+  moveSpeed: 12
   gravity: 9.81
-  jumpHeight: 0.2
-  mouseSens: 180
+  jumpHeight: 1
+  mouseSens: 250
 --- !u!114 &5614735122084932146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -183,6 +183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myUGUI: {fileID: 8845536531748442998}
+  obj: {fileID: 0}
 --- !u!143 &3801435445513999633
 CharacterController:
   m_ObjectHideFlags: 0
