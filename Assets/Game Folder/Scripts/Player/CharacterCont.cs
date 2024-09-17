@@ -55,7 +55,7 @@ public class CharacterCont : NetworkBehaviour
         UI.SetActive(false);
         Inputhandler();
         movementHandler();
-        
+        state = stateEvaluation();
     }
 
     void Inputhandler()
@@ -112,5 +112,10 @@ public class CharacterCont : NetworkBehaviour
         }
 
         return verticalVel;
+    }
+
+    PlayerState stateEvaluation()
+    {
+        return PlayerState.FREE;
     }
 }

@@ -11,18 +11,23 @@ public enum pedestarianState
 }
 
 
-public class NormalPedestarian : NetworkBehaviour
+public class NormalPedestarian : AIBase
 {
     [SerializeField] pedestarianState pedState;
     // Start is called before the first frame update
     void Start()
     {
-        
+        pedState = pedestarianState.IDLE;
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    pedestarianState evaluateState()
+    {
+        return pedestarianState.IDLE;
     }
 }
