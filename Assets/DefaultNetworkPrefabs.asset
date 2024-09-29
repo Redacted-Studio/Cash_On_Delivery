@@ -1,21 +1,3 @@
-%YAML 1.1
-%TAG !u! tag:unity3d.com,2011:
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e651dbb3fbac04af2b8f5abf007ddc23, type: 3}
-  m_Name: DefaultNetworkPrefabs
-  m_EditorClassIdentifier: 
-  IsDefault: 1
-  List:
-  - Override: 0
-    Prefab: {fileID: 243847927988228792, guid: 9e13947505b1c0949885d91701dcbc5d, type: 3}
-    SourcePrefabToOverride: {fileID: 0}
-    SourceHashToOverride: 0
-    OverridingTargetPrefab: {fileID: 0}
+version https://git-lfs.github.com/spec/v1
+oid sha256:f1a7d885145cbb7618924d0a16e145e1ea8b8f023c4e130b2679cca8d5323000
+size 868

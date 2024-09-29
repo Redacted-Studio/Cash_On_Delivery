@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using Unity.Netcode;
@@ -8,6 +9,7 @@ using UnityEngine.UI;
 
 public class LobbyHandler : MonoBehaviour
 {
+    [Header("Component Refrences")]
     [SerializeField] UnityTransport transport;
     [SerializeField] NetworkManager networkManager;
 
@@ -18,8 +20,12 @@ public class LobbyHandler : MonoBehaviour
     [SerializeField] Button ClientButt;
     [SerializeField] Button StopButt;
 
+    [Header("Player Refrences")]
+
     [SerializeField] TMP_InputField IPConfiguration;
     [SerializeField] TMP_InputField playerName;
+
+    [SerializeField] List<Transform> playerSpawnPosition;
 
     string LocalPlayerName;
 
@@ -129,5 +135,11 @@ public class LobbyHandler : MonoBehaviour
         HostButt.interactable = true;
         ClientButt.interactable = true;
         StopButt.interactable = false;
+    }
+
+    public Transform getPlayerPosition(out List<Transform> playerRes)
+    {
+        playerRes = playerSpawnPosition;
+        return null;
     }
 }
