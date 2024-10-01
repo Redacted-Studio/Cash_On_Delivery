@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Netcode;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -14,6 +15,9 @@ public enum pedestarianState
 
 public class NormalPedestarian : AIBase
 {
+    [Header("Backend Refrences")]
+    private int NPC_UID;
+
     [Header("Pedestarian State")]
     [SerializeField] pedestarianState pedState;
 
@@ -32,16 +36,52 @@ public class NormalPedestarian : AIBase
 
     void Update()
     {
-        
+        Brain();
     }
-    
+
+    protected void Brain()
+    {
+        if (destination.Count > 0)
+            SetDestination(destination[0]);
+
+        if (isHavingDestination)
+        {
+            moveTo(destination[0].transform);
+            pedState = pedestarianState.GO_TO_DESTINATION;
+        }
+
+        if (agent.remainingDistance <= 2 && isHavingDestination)
+        {
+            RemoveDestination(0);
+            isHavingDestination = false;
+        }
+
+        if (destination.Count == 0)
+            pedState = pedestarianState.IDLE;
+            
+
+        Debug.Log("Processing");
+    }
+
+    #region Brain Processing
+
+    protected void moveTo(Transform moveTo)
+    {
+        agent.SetDestination(moveTo.position);
+    }
+
+    #endregion
+
     #region Destination Controller
     /// <summary>
     /// Buat ngeset Destination dari Pedestarian
     /// </summary>
     public void SetDestination(PedestarianDestination destinations)
     {
-        destination.Add(destinations);
+        if (!destination.Contains(destinations))
+            destination.Add(destinations);
+        
+        isHavingDestination = true;
     }
 
     /// <summary>
