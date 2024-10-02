@@ -17,4 +17,11 @@ public class PedestarianDestination : DestinationBase
     {
         return destinationType;
     }
+
+    private void Start()
+    {
+        var AIManager = FindObjectOfType<AIManager>();
+        if (AIManager)
+            AIManager.RegisterDestination(this);
+    }
 }
