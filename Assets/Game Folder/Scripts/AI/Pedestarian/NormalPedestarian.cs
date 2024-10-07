@@ -38,10 +38,7 @@ public class NormalPedestarian : AIBase
             myCarDoor = Car.GetDriverDoorPosition().position;
         }
 
-        AImanager = FindObjectOfType<AIManager>();
-        if (AImanager)
-            AImanager.RegisterAI(this);
-
+        AImanager = AIManager.GetInstances();
         //StartCoroutine(Brain());
     }
 

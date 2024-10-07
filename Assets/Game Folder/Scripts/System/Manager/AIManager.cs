@@ -6,18 +6,26 @@ using UnityEngine;
 
 public class AIManager : NetworkBehaviour
 {
-    AIManager Instances;
+    static AIManager instance;
     private NetworkVariable<int> aiNumber = new NetworkVariable<int>();
     private List<AIBase> AIRegistered = new List<AIBase>();
     public List<PedestarianDestination> PedestarianDestinations;
 
     private void Start()
     {
-        if (Instances != null && Instances != this) Destroy(this);
-        else if (Instances == null) Instances = this;
+        if (instance != null && instance != this) Destroy(this);
+        else if (instance == null) instance = this;
     }
 
-    
+    #region Static Function
+
+    public static AIManager GetInstances()
+    {
+        return instance;
+    }
+
+    #endregion
+
     #region Public Function
 
     /// <summary>

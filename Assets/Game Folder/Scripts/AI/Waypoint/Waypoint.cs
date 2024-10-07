@@ -32,6 +32,8 @@ public class Waypoint : MonoBehaviour
     public Waypoint GetClosestWaypoint(Vector3 PlaceToGo)
     {
         if (isEndPoint) return this;
+        if (nextAvailWaypoint.Count < 1)
+            return nextAvailWaypoint[0];
 
         float initial = Vector3.Distance(PlaceToGo, nextAvailWaypoint[nextAvailWaypoint.Count - 1].transform.position);
         int keBerapa = nextAvailWaypoint.Count - 1;
