@@ -7,11 +7,12 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent))]
 public abstract class AIBase : MonoBehaviour
 {
-    
-    virtual public void onTick()
+    private void Update()
     {
-
+        onTick();
     }
+
+    virtual public void onTick(){    }
     virtual public GameObject getParentGameObject()
     {
         if (this.gameObject.GetComponentInParent<GameObject>() != null)

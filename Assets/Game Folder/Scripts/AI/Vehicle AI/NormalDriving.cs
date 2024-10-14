@@ -28,7 +28,7 @@ public class NormalDriving : AIBase
         safeDistance *= 3;
     }
 
-    private void Update()
+    override public void onTick()
     {
         if (Driver == null) return;
         SafeDistanceCheck();

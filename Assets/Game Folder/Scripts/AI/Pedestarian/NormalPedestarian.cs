@@ -42,7 +42,7 @@ public class NormalPedestarian : AIBase
         //StartCoroutine(Brain());
     }
 
-    void Update()
+    override public void onTick()
     {
         Brain();
     }
