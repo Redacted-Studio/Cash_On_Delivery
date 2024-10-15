@@ -19,7 +19,7 @@ public class NormalPedestarian : AIBase
     [SerializeField] pedestarianState pedState;
 
     [Header("Pedestarian Destination Controller")]
-    [SerializeField] PedestarianDestination destination = new PedestarianDestination();
+    [SerializeField] PedestarianDestination destination;
     bool isHavingDestination, isMovingToDestination, isOwningVehicle, isMovingToVehicle;
 
     [Header("Component Refrences")]
@@ -27,6 +27,8 @@ public class NormalPedestarian : AIBase
     [SerializeField] NormalDriving Car;
     Vector3 myCarDoor;
     private AIManager AImanager;
+    [SerializeField] private GameObject AIModel;
+    private Animator modelAnimator;
 
     void Start()
     {
@@ -39,12 +41,31 @@ public class NormalPedestarian : AIBase
         }
 
         AImanager = AIManager.GetInstances();
+
+        if(AIModel)
+        {
+            modelAnimator = AIModel.GetComponent<Animator>();
+        }
+
         //StartCoroutine(Brain());
     }
 
     override public void onTick()
     {
         Brain();
+        AnimationHandler();
+    }
+
+    protected void AnimationHandler()
+    {
+        if (agent.velocity.magnitude == 0)
+        {
+            modelAnimator.SetBool("isWalking", false);
+        }
+        else if (agent.velocity.magnitude > 0)
+        {
+            modelAnimator.SetBool("isWalking", true);
+        } 
     }
 
     protected void Brain()
@@ -91,7 +112,7 @@ public class NormalPedestarian : AIBase
             pedState = pedestarianState.GO_TO_DESTINATION;
         }
 
-        if (agent.remainingDistance <= 2 && isHavingDestination)
+        if (agent.remainingDistance == 0 && isHavingDestination)
         {
             RemoveDestination();
             isHavingDestination = false;
