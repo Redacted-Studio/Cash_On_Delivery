@@ -53,7 +53,7 @@ public class NormalPedestarian : AIBase
     override public void onTick()
     {
         Brain();
-        AnimationHandler();
+        
     }
 
     protected void AnimationHandler()
@@ -77,7 +77,29 @@ public class NormalPedestarian : AIBase
             else
                 DestinationController();
         }
-        
+
+        if (agent.isOnOffMeshLink)
+        {
+            OffMeshLinkData data = agent.currentOffMeshLinkData;
+            modelAnimator.SetBool("isWalking", true);
+
+            //calculate the final point of the link
+            Vector3 endPos = data.endPos + Vector3.up * agent.baseOffset;
+
+            //Move the agent to the end point
+            agent.transform.position = Vector3.MoveTowards(agent.transform.position, endPos, agent.speed * Time.deltaTime);
+            gameObject.transform.LookAt(Vector3.MoveTowards(agent.transform.position, endPos, agent.speed));
+
+            //when the agent reach the end point you should tell it, and the agent will "exit" the link and work normally after that
+            if (agent.transform.position == endPos)
+            {
+                agent.CompleteOffMeshLink();
+            }
+        } else
+        {
+            AnimationHandler();
+        }
+
         //Debug.Log("Processing");
     }
 
