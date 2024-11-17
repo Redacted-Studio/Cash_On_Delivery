@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 /// <summary>
@@ -121,6 +122,12 @@ public class Street : MonoBehaviour {
                 UnityEngine.Debug.DrawLine(paths[i].PosOfA, paths[i].PosOfB, Color.blue);
             }
         }
+
+        foreach (Path p in paths)
+        {
+            Handles.Label(p.PosOfA, p.IDOfA.ToString());
+        }
+
 #endif  
     }
 

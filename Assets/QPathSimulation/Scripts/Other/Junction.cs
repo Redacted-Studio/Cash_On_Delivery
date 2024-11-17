@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEditor;
 using UnityEngine;
 
 /// <summary>
@@ -149,6 +150,11 @@ public class Junction : MonoBehaviour {
                     }
                 }
             }
+        }
+
+        foreach (Path p in paths)
+        {
+            Handles.Label(p.PosOfA, p.IDOfA.ToString());
         }
 
 #endif        

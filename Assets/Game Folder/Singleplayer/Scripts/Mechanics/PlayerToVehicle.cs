@@ -23,6 +23,7 @@ public class PlayerToVehicle : MonoBehaviour
 
     SUPERCharacterAIO superCharCont;
     CapsuleCollider CharacterColl;
+    Rigidbody playerRB;
 
     // Camera Handler
     [SerializeField] Camera MainCams;
@@ -40,6 +41,7 @@ public class PlayerToVehicle : MonoBehaviour
 
         superCharCont = GetComponent<SUPERCharacterAIO>();
         CharacterColl = GetComponent<CapsuleCollider>();
+        playerRB = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -73,7 +75,8 @@ public class PlayerToVehicle : MonoBehaviour
         vehicleController.enabled = true;
         visualEffectsVeh.enabled= true;
         superCharCont.enabled = false;
-        //CharacterColl.enabled = false;
+        playerRB.isKinematic = true;
+        CharacterColl.enabled = false;
         playerStates = PlayerStateMovement.CAR;
         
     }

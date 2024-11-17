@@ -411,11 +411,11 @@ public class PathFinderEditor : Editor {
     /// <param name="position">Position where junction should be created</param>
     Junction CreateJunction(Vector3 position) {
         var go = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
-        go.GetComponent<CapsuleCollider>().radius = 2f;
+        //go.GetComponent<CapsuleCollider>().radius = 2f;
         go.name = "Junction";
         go.transform.localScale = new Vector3(1, 0.1f, 1);
         go.transform.position = position;
-        go.GetComponent<Renderer>().material = (Material)AssetDatabase.LoadAssetAtPath("Assets/QPathSimulation/Materials/junction.mat", typeof(Material));
+        //go.GetComponent<Renderer>().material = (Material)AssetDatabase.LoadAssetAtPath("Assets/QPathSimulation/Materials/junction.mat", typeof(Material));
         go.transform.parent = script.transform;
 
         Junction junction = go.AddComponent<Junction>();

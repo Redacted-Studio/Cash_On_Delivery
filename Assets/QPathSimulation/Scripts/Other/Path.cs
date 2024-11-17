@@ -143,13 +143,13 @@ public class Path {
         street = Parent.GetComponent<Street>();
         priority = Prioritet;
         a = A; b = B;
-        if (this.hide < HidePath.Hiden) {
-            var go = GameObject.CreatePrimitive(PrimitiveType.Cube);
-            go.GetComponent<BoxCollider>().size = new Vector3(1.4f, 1f, 1f);
-            transform = go.transform;
-            transform.parent = Parent;
-            go.GetComponent<Renderer>().material = (Material)AssetDatabase.LoadAssetAtPath("Assets/QPathSimulation/Materials/street.mat", typeof(Material));
-        }
+        //if (this.hide < HidePath.Hiden) {
+            //var go = GameObject.CreatePrimitive(PrimitiveType.Cube);
+            //go.GetComponent<BoxCollider>().size = new Vector3(1.4f, 1f, 1f);
+            //transform = go.transform;
+            //transform.parent = Parent;
+            //go.GetComponent<Renderer>().material = (Material)AssetDatabase.LoadAssetAtPath("Assets/QPathSimulation/Materials/street.mat", typeof(Material));
+        //}
         Visualize();
     }
     /// <summary>
