@@ -451,6 +451,7 @@ MonoBehaviour:
   StopButt: {fileID: 292620755502545558}
   IPConfiguration: {fileID: 8312103873636001554}
   playerName: {fileID: 4241477872764128518}
+  playerSpawnPosition: []
 --- !u!1 &2902700306849370374
 GameObject:
   m_ObjectHideFlags: 0
