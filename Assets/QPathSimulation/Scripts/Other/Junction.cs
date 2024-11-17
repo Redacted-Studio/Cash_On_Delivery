@@ -126,6 +126,36 @@ public class Junction : MonoBehaviour {
     /// </summary>
     int phase = 0;
 
+    private void OnDrawGizmos()
+    {
+#if UNITY_EDITOR
+        if (paths.Count > 0)
+        {
+            for (int i = 0; i < paths.Count; i++)
+            {
+                UnityEngine.Debug.DrawLine(paths[i].PosOfA, paths[i].PosOfB, Color.blue);
+            }
+        }
+
+        if (joints.Count > 0)
+        {
+            for (int i = 0; i < joints.Count; i++)
+            {
+                for (int j = 0; j < joints[i].input.Count; j++)
+                { 
+                    for (int k = 0; k < joints[i].output.Count; k++)
+                    {
+                        UnityEngine.Debug.DrawLine(joints[i].input[j].position, joints[i].output[k].position, Color.yellow);
+                    }
+                }
+            }
+        }
+
+#endif        
+    }
+
+
+
     /// <summary>
     /// Mark is this junction is roundabout
     /// </summary>

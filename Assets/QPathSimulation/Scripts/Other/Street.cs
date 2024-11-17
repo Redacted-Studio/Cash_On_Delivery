@@ -108,6 +108,22 @@ public class Street : MonoBehaviour {
     /// <param name="To">Junction "to"</param>
     /// <param name="fromCount">Number of paths "from-to"</param>
     /// <param name="toCount">Number of paths "to-from"</param>
+    /// 
+
+
+    private void OnDrawGizmos()
+    {
+#if UNITY_EDITOR
+        if (paths.Count > 0)
+        {
+            for (int i = 0; i < paths.Count; i++)
+            {
+                UnityEngine.Debug.DrawLine(paths[i].PosOfA, paths[i].PosOfB, Color.blue);
+            }
+        }
+#endif  
+    }
+
     public void Init(Junction From, Junction To, int fromCount = 1, int toCount = 1) {
         iFrom = fromCount; iTo = toCount;
         this.from = From; this.to = To;

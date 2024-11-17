@@ -159,6 +159,4 @@ public class PathFollower : MonoBehaviour {
     /// Responsible for abort the travel routine
     /// </summary>
     public void StopFollowing() { StopAllCoroutines(); }
-
-
 }

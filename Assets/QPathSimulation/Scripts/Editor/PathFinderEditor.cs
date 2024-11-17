@@ -4,6 +4,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.SceneManagement;
+using Unity.VisualScripting;
 
 /// QPathFinder modified
 /// <summary>
@@ -36,6 +37,7 @@ public class PathFinderEditor : Editor {
     const string costGUITextColor = "#00a2ffff";
     const string junctionGUITextColor = "#00ff00ff";
     const string groundColliderLayerName = "Default";
+
     GUIStyle RichTextStyle => new GUIStyle {
         richText = true,
         alignment = TextAnchor.MiddleCenter,

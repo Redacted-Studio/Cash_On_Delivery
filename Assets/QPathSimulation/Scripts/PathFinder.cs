@@ -15,6 +15,9 @@ public class PathFinder : MonoBehaviour {
     private static PathFinder _instance;////usunąc?
     public static PathFinder Instance => _instance;
 
+    [SerializeField] GameObject[] CivilianCar;
+    [SerializeField] GameObject[] Trucks;
+    [SerializeField] GameObject[] EmergencyCar;
 
     /// <summary>
     /// Stores a list of created vehicles
@@ -191,8 +194,8 @@ public class PathFinder : MonoBehaviour {
         if (!carsBox) {
             carsBox = (new GameObject("Cars")).transform;
         }
-        GameObject go = GameObject.CreatePrimitive(PrimitiveType.Cube);
-        go.transform.localScale = new Vector3(0.4f, 0.4f, 0.8f);
+        GameObject go = Instantiate(CivilianCar[Random.Range(0, CivilianCar.Length - 1)]);
+        //go.transform.localScale = new Vector3(0.4f, 0.4f, 0.8f);
         go.transform.parent = carsBox;
         cars.Add(go.transform);
         PathFollower follower = go.AddComponent<PathFollower>();

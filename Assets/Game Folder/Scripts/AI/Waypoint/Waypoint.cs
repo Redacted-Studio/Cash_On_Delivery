@@ -7,12 +7,14 @@ public class Waypoint : MonoBehaviour
     public List<Waypoint> nextAvailWaypoint;
     public List<Waypoint> previousAvailWaypoint;
     public bool isEndPoint;
+    public bool isLeftWay;
 
     private void OnDrawGizmos()
     {
         foreach (var waypoint in nextAvailWaypoint) 
         {
-            Gizmos.color = Color.black;
+            if (isLeftWay) Gizmos.color = Color.yellow;
+            else Gizmos.color = Color.white;
             Gizmos.DrawLine(transform.position, waypoint.transform.position);
         }        
     }
