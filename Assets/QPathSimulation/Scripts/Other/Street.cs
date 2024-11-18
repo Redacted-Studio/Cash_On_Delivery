@@ -128,6 +128,12 @@ public class Street : MonoBehaviour {
             Handles.Label(p.PosOfA, p.IDOfA.ToString());
         }
 
+        foreach (Node p in nodes)
+        {
+            Handles.Label(p.position, p.ID.ToString());
+        }
+
+        Handles.Label(center.position, "Center");
 #endif  
     }
 

@@ -892,7 +892,7 @@ MonoBehaviour:
     heuristicDistance: 0
     pathDistance: 0
   center:
-    position: {x: 23.515036, y: 0, z: 51.260887}
+    position: {x: 23.51504, y: 0, z: 51.260887}
     ID: 13
     heuristicDistance: 0
     pathDistance: 0
@@ -2312,7 +2312,7 @@ MonoBehaviour:
       heuristicDistance: 0
       pathDistance: 0
     b:
-      position: {x: 16.994322, y: 0, z: 53.217823}
+      position: {x: 16.99432, y: 0, z: 53.217823}
       ID: 2
       heuristicDistance: 0
       pathDistance: 0
@@ -2609,7 +2609,7 @@ MonoBehaviour:
     ID: 1
     heuristicDistance: 0
     pathDistance: 0
-  - position: {x: 16.994322, y: 0, z: 53.217823}
+  - position: {x: 16.99432, y: 0, z: 53.217823}
     ID: 2
     heuristicDistance: 0
     pathDistance: 0
