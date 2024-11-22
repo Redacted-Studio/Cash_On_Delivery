@@ -8,9 +8,12 @@ public class ModifierCarAI : MonoBehaviour
     public List<Transform> Sidechecks = new List<Transform> { null };
     public PathFollower pFollower;
 
-    public bool objectDetected = false;
+    public bool objectDetectedFront = false;
+    public bool objectDetectedSide = false;
     public float speedLimit = 0.02f;
     public int recklessnessThreshold;
+    public float frontdistanceChecker;
+    float distCheck;
 
     private float steerAngle = 0f;
     public LayerMask seenLayers = Physics.AllLayers;
@@ -19,6 +22,8 @@ public class ModifierCarAI : MonoBehaviour
     void Start()
     {
         pFollower = GetComponent<PathFollower>();
+        frontdistanceChecker = Random.Range(1f, 2f);
+        distCheck = frontdistanceChecker;
     }
 
     // Update is called once per frame
@@ -26,6 +31,19 @@ public class ModifierCarAI : MonoBehaviour
     {
         ObjectChecks();
         SideObjectChecks();
+
+        if (objectDetectedFront || objectDetectedSide)
+            SetSpeed(0);
+    }
+
+    public void returnDistanceChekcer()
+    {
+        frontdistanceChecker = distCheck;
+    }
+
+    public bool isAnythingInFront()
+    {
+        return (objectDetectedFront || objectDetectedSide);
     }
 
     void ObjectChecks()
@@ -34,7 +52,7 @@ public class ModifierCarAI : MonoBehaviour
 
         float xangle = nextCheckpointRelative.y / nextCheckpointRelative.magnitude;
 
-        float maxDistance = .2f;
+        float maxDistance = frontdistanceChecker;
 
         xangle = Mathf.Asin(xangle) * 180f / 3.14f;
 
@@ -57,12 +75,12 @@ public class ModifierCarAI : MonoBehaviour
 
         if (objectInFront > 0)
         {
-            SetSpeed(0);
-            objectDetected = true;
+            objectDetectedFront = true;
         }
         else
         {
-            objectDetected = false;
+            objectDetectedFront = false;
+            
         }
     }
 
@@ -72,7 +90,7 @@ public class ModifierCarAI : MonoBehaviour
 
         float xangle = nextCheckpointRelative.y / nextCheckpointRelative.magnitude;
 
-        float maxDistance = .25f;
+        float maxDistance = 1f;
 
         xangle = Mathf.Asin(xangle) * 180f / 3.14f;
 
@@ -93,12 +111,11 @@ public class ModifierCarAI : MonoBehaviour
 
         if (objectInFront > 0)
         {
-            SetSpeed(0);
-            objectDetected = true;
+            objectDetectedSide = true;
         }
         else
         {
-            objectDetected = false;
+            objectDetectedSide = false;
         }
     }
 

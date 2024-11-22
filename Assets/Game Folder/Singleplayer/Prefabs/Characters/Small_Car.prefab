@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7483657338318534881}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: Checks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4168987084840439557}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: Checks (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +71,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2701502143101826355}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: WFP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,7 +103,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8000902185453405963}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: Checks (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 8154838533918780978}
   - component: {fileID: 4676821026618506144}
   - component: {fileID: 5682260335652373180}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: Wheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -219,7 +219,7 @@ GameObject:
   - component: {fileID: 2729115894702755616}
   - component: {fileID: 5917064827699664281}
   - component: {fileID: 349229360610554292}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: Wheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -302,7 +302,7 @@ GameObject:
   - component: {fileID: 3976607679900579750}
   - component: {fileID: 9006153010004754458}
   - component: {fileID: 6971433222068168546}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: Wheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -387,7 +387,7 @@ GameObject:
   - component: {fileID: 6954436658367307195}
   - component: {fileID: 2339970585851473933}
   - component: {fileID: 3686287539774740220}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: Small_Car
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -404,7 +404,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.899, z: 0.27}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2701502143101826355}
@@ -489,7 +489,7 @@ MonoBehaviour:
   recklessnessThreshold: 0
   seenLayers:
     serializedVersion: 2
-    m_Bits: 192
+    m_Bits: 64
 --- !u!65 &3686287539774740220
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -520,7 +520,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5803150799254491747}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: WRP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -554,7 +554,7 @@ GameObject:
   - component: {fileID: 8871919601590526608}
   - component: {fileID: 912514921045271693}
   - component: {fileID: 7576237566796490811}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: Wheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -635,7 +635,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7581912107814219720}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: WRF
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -667,7 +667,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 698387441263403710}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: WRD
   m_TagString: Untagged
   m_Icon: {fileID: 0}

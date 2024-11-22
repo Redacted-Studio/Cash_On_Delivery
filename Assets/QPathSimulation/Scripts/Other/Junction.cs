@@ -111,7 +111,7 @@ public class Junction : MonoBehaviour {
     /// <summary>
     /// Store time of full cycle of junction phases
     /// </summary>
-    public float cycleTime = 20f;
+    public float cycleTime = 50f;
     /// <summary>
     /// Stores an array of duration of each phase
     /// </summary>
@@ -126,6 +126,10 @@ public class Junction : MonoBehaviour {
     /// Number of current running phase
     /// </summary>
     int phase = 0;
+    /// <summary>
+    /// Is It Connector or Intersection
+    /// </summary>
+    public bool isConnector = false;
 
     private void OnDrawGizmos()
     {
@@ -291,7 +295,9 @@ public class Junction : MonoBehaviour {
             }
             maxInputOutput = Mathf.Max(joints.Count, maxInputOutput);
         }
-        margin = maxInputOutput < 2 ? 0 : maxInputOutput * maxInputOutput * 0.08f + maxInputOutput * 0.4f;
+        //if(isConnector) margin = maxInputOutput < 2 ? 0 : maxInputOutput * maxInputOutput * 0f + maxInputOutput * 0f;
+        //else margin = maxInputOutput < 2 ? 0 : maxInputOutput * maxInputOutput * .6f + maxInputOutput * .5f;
+        margin = maxInputOutput < 2 ? 0 : maxInputOutput * maxInputOutput * .7f + maxInputOutput * 1f;
         SortStreets();
         phases = null;
 
@@ -418,7 +424,7 @@ public class Junction : MonoBehaviour {
 
         timers = new float[phases.Length];
         for (int j = 0; j < phases.Length; j++) {
-            timers[j] = 5f;
+            timers[j] = 8f;
         }
 
         foreach (Path p in paths) {

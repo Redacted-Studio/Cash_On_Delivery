@@ -30,7 +30,7 @@ public class Joint {
     public Vector3 Position {
         get {
             if (input.Count != 0 && output.Count != 0) {
-                return (input[0].position + output[0].position) / 2;
+                return (input[0].position + output[0].position);
             }
             if (input.Count != 0) {
                 return input[0].position;
@@ -49,7 +49,7 @@ public class Joint {
     /// <param name="Type">Connection type. True if junction "to", False if junction "from"</param>
     public Joint(Street Street, bool Type) {
         street = Street;
-        outsideVec = (Street.to.transform.position - Street.from.transform.position).normalized;
+        outsideVec = (Street.to.transform.position - Street.from.transform.position);
         outsideVec = Type == false ? -outsideVec : outsideVec;
     }
 }
@@ -185,17 +185,17 @@ public class Street : MonoBehaviour {
         Joint jointFrom = from.joints.Find(item => item.street == this);
         Joint jointTo = to.joints.Find(item => item.street == this);
         for (int i = 0; i < jointFrom.input.Count; i++) {
-            jointFrom.input[i].position = (from.transform.position + norm * from.margin + jPerpendic * (0.4f + i * 0.6f));
+            jointFrom.input[i].position = (from.transform.position + norm * from.margin + jPerpendic * (3.5f + i * 5.5f));
         }
         for (int i = 0; i < jointFrom.output.Count; i++) {
-            jointFrom.output[i].position = (from.transform.position + norm * from.margin - jPerpendic * (0.4f + i * 0.6f));
+            jointFrom.output[i].position = (from.transform.position + norm * from.margin - jPerpendic * (3.5f + i * 5.5f));
         }
         Vector3 jPerpendic2 = Vector3.Project(Perpendic(to), -norm) + perpendic;
         for (int i = 0; i < jointTo.input.Count; i++) {
-            jointTo.input[i].position = (to.transform.position - norm * to.margin - jPerpendic2 * (0.4f + i * 0.6f));
+            jointTo.input[i].position = (to.transform.position - norm * to.margin - jPerpendic2 * (3.5f + i * 5.5f));
         }
         for (int i = 0; i < jointTo.output.Count; i++) {
-            jointTo.output[i].position = (to.transform.position - norm * to.margin + jPerpendic2 * (0.4f + i * 0.6f));
+            jointTo.output[i].position = (to.transform.position - norm * to.margin + jPerpendic2 * (3.5f + i * 5.5f));
         }
         foreach (Path p in paths) {
             p.Visualize();
@@ -263,9 +263,9 @@ public class Street : MonoBehaviour {
 
         Node prev = center;
         for (int i = 0; i < iFrom; i++) {
-            Node n1 = new Node(fromBorder - perpedic * (0.4f + i * 0.6f));
-            Node n3 = new Node(toBorder - perpedic * (0.4f + i * 0.6f));
-            Node n2 = new Node(center.position - perpedic * (0.4f + i * 0.6f));
+            Node n1 = new Node(fromBorder - perpedic * (3.5f + i * 5.5f));
+            Node n3 = new Node(toBorder - perpedic * (3.5f + i * 5.5f));
+            Node n2 = new Node(center.position - perpedic * (3.5f + i * 5.5f));
             nod1.Add(n1);
             nod2.Add(n3);
             nodes.Add(n1);
@@ -281,9 +281,9 @@ public class Street : MonoBehaviour {
         }
         prev = center;
         for (int i = 0; i < iTo; i++) {
-            Node n1 = new Node(toBorder + perpedic * (0.4f + i * 0.6f));
-            Node n3 = new Node(fromBorder + perpedic * (0.4f + i * 0.6f));
-            Node n2 = new Node(center.position + perpedic * (0.4f + i * 0.6f));
+            Node n1 = new Node(toBorder + perpedic * (3.5f + i * 5.5f));
+            Node n3 = new Node(fromBorder + perpedic * (3.5f + i * 5.5f));
+            Node n2 = new Node(center.position + perpedic * (3.5f + i * 5.5f));
             nod3.Add(n1);
             nod4.Add(n3);
             nodes.Add(n1);

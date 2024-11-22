@@ -75,6 +75,8 @@ public class Path {
     /// </summary>
     [HideInInspector] public Transform transform;
 
+    public GameObject firstCarQueue;
+
     /// <summary>
     /// Returns the identifier of the first node
     /// </summary>
@@ -181,7 +183,8 @@ public class Path {
     /// The method is responsible for adding vehicle to queue
     /// </summary>
     /// <returns>Returns number of vehicles in queue</returns>
-    public int EnterQueue() {
+    public int EnterQueue(GameObject car) {
+        if (entireQueue == 0) firstCarQueue = car;
         entireQueue++;
         queueTimes.Add(Time.time);
         return entireQueue - 1;
@@ -190,6 +193,7 @@ public class Path {
     /// The method is responsible for delete vehicle to queue
     /// </summary>
     public void LeaveQueue() {
+        firstCarQueue = null;
         queueTimes.RemoveAt(0);
         ++leftQueue;
     }

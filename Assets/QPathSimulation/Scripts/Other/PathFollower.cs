@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 /// QPathFinder modified
@@ -13,12 +14,17 @@ public class PathFollower : MonoBehaviour {
     /// Stores a list of paths for the vehicle to return to
     /// </summary>
     List<Path> returningPath;
+    List<Path> paths;
     float returningDelay; 
     int returningType = -1;
     float waitingTime = 0;
     MeshRenderer mesh;
     Material material;
     Coroutine routine;
+    ModifierCarAI carAI;
+    bool Stop;
+    int index = 0;
+    public bool isAnythingObstructing;
     /// <summary>
     /// Method run when the object is created
     /// </summary>
@@ -30,6 +36,24 @@ public class PathFollower : MonoBehaviour {
         };
         mesh.material = material;
     }
+
+    private void Start()
+    {
+        carAI = GetComponent<ModifierCarAI>();
+    }
+
+    private void Update()
+    {
+        isAnythingObstructing = carAI.isAnythingInFront();
+        /*if (paths[index + 1].CanEnter(BlockType.Open) == false && paths[index].firstCarQueue == this.gameObject)
+        {
+            carAI.frontdistanceChecker = 0;
+            float dist1 = Vector3.Distance(transform.position, paths[index].PosOfB);
+            if (dist1 < 1.5f) Stop = true;
+            
+        } else carAI.returnDistanceChekcer();*/
+    }
+
     /// <summary>
     /// The method is responsible for assigning the travel route and its start
     /// </summary>
@@ -41,6 +65,7 @@ public class PathFollower : MonoBehaviour {
         returningType = ReturningType;
         returningDelay = WaitingTime;
         returningPath = ReturningPath;
+        paths = Path;
         if (routine != null) {
             StopCoroutine(routine);
         }
@@ -57,7 +82,6 @@ public class PathFollower : MonoBehaviour {
         }
         int QueuePos;
         Color[] gradient = { Color.white, Color.green, Color.blue, Color.red };
-        int index = 0;
         int end = path.Count;
         float dist, dist1, colo = 0;
         bool endpoint = false;
@@ -74,7 +98,7 @@ public class PathFollower : MonoBehaviour {
         Vector3? target2 = null;
         transform.position = path[index].PosOfA;
         transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(path[index].PosOfB - transform.position), 400f);
-        QueuePos = path[index].EnterQueue();
+        QueuePos = path[index].EnterQueue(this.gameObject);
         dir = path[index].PosOfA - path[index].PosOfB;
         dir.Normalize();
         float padding = 0.4f;
@@ -85,8 +109,6 @@ public class PathFollower : MonoBehaviour {
             dist1 = Vector3.Distance(transform.position, path[index].PosOfB);
             float angle = dist1 > 0.2f ? Quaternion.Angle(transform.rotation, Quaternion.LookRotation(target - transform.position)) : Quaternion.Angle(transform.rotation, Quaternion.LookRotation(target2 ?? target - transform.position));
             float tar;
-
-
             //centerpoint reached, index++, endpoint false
             if (endpoint && dist1 < padding) {
                 endpoint = false;
@@ -110,7 +132,7 @@ public class PathFollower : MonoBehaviour {
                 if (!endpoint && dist1 < 1.3f && path[index].leftQueue == QueuePos && path[index + 1].CanEnter(path[index].priority)) {
                     endpoint = true;
                     path[index].LeaveQueue();
-                    QueuePos = path[index + 1].EnterQueue();
+                    QueuePos = path[index + 1].EnterQueue(this.gameObject);
                     waitingTime = 0;
                     //back = path[index].maxInQueue > 1 ? (QueuePos - path[index].sQueue + 1f) : padding;
                     //dist = Vector3.Distance(transform.position, target);
@@ -118,12 +140,14 @@ public class PathFollower : MonoBehaviour {
                     back = 0;
                 }
             }
+
+            int maxSpeed = UnityEngine.Random.Range(3, 7);
             if (!endpoint && dist < 0.5f) {
                 waitingTime += Time.deltaTime;
                 tar = 0.1f;
             } else {//endpoint || dist >= 0.5f
                 tar = 1f + 0.2f * dist - 0.4f * Mathf.Pow(dist, 2) + 0.4f * Mathf.Pow(dist, 3);
-                tar = tar > 3 ? 3 : tar;
+                tar = tar > 3 ? maxSpeed : tar;
             }
             if (dist >= 0.4f) {
                 tar = angle < 3 ? tar : tar / (angle / 3);
@@ -131,7 +155,8 @@ public class PathFollower : MonoBehaviour {
             target = path[index].PosOfB + dir * back;
             //yield return new WaitForFixedUpdate();
             velocity = Mathf.SmoothDamp(velocity, tar, ref colo, 0.3f);
-            if (dist >= 0.1f) {
+            if (dist >= 0.1f && isAnythingObstructing == false && Stop == false) {
+                
                 transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(target - transform.position), 100f * Time.deltaTime);
                 transform.position = transform.position + transform.forward * velocity * Time.deltaTime * 1;
             }
