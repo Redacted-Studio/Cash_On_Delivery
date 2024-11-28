@@ -6,6 +6,6 @@ public class npcGenTest : MonoBehaviour
 {
     private void OnCollisionEnter(Collision collision)
     {
-        NPCManager.Instance.GenerateNPC(Gender.Laki);
+        NPCManager.Instance.GenerateNPC(Gender.Laki, 1);
     }
 }

@@ -11,7 +11,6 @@ public enum Gender
 
 public class NPCManager : MonoBehaviour
 {
-
     [Header("Generator")]
     [SerializeField] NamaDepan NamadepanGenLaki;
     [SerializeField] NamaBelakang NamaBelakangGenLaki;
@@ -37,21 +36,51 @@ public class NPCManager : MonoBehaviour
         }
     }
 
-    public NPC GenerateNPC(Gender gender)
+    public void GenerateNPC(Gender gender, int number)
     {
-        string Nama;
-        if (gender == Gender.Laki)
-            Nama = NamadepanGenLaki.GetRandomName() + " " + NamaBelakangGenLaki.GetRandomName();
-        else
-            Nama = NamadepanGenPerempuan.GetRandomName() + " " + NamaBelakangGenPerempuan.GetRandomName();
-        NPC npcs = new(Nama, UnityEngine.Random.Range(14, 60), gender);
-        NPCList.Add(npcs);
-        return npcs;
+        for (int i = 0; i < number; i++)
+        {
+            string Nama;
+            if (gender == Gender.Laki)
+                Nama = NamadepanGenLaki.GetRandomName() + " " + NamaBelakangGenLaki.GetRandomName();
+            else
+                Nama = NamadepanGenPerempuan.GetRandomName() + " " + NamaBelakangGenPerempuan.GetRandomName();
+            NPC npcs = new(Nama, UnityEngine.Random.Range(14, 60), gender);
+            NPCList.Add(npcs);
+        }
     }
 
     public NPC GetRandomNPC()
     {
         return NPCList[UnityEngine.Random.Range(0, NPCList.Count - 1)];
+    }
+
+    public NPC GetHomelessNPC()
+    {
+        List<NPC> homeless = new List<NPC>();
+        if (NPCList.Count == 0)
+        {
+            GenerateNPC(Gender.Laki, 3);
+            GenerateNPC(Gender.Perempuan, 3);
+        }
+
+        foreach (NPC npc in NPCList)
+        {
+            if (npc.OwnBuilding == false && npc.Umur >= 25)
+            {
+                homeless.Add(npc);
+            }
+        }
+
+        if (homeless.Count == 0)
+        {
+            var randomizer = UnityEngine.Random.Range(0, 1);
+            if (randomizer == 1) GenerateNPC(Gender.Laki, 5);
+            else GenerateNPC(Gender.Perempuan, 5);
+            
+        }
+
+        return homeless[UnityEngine.Random.Range(0, homeless.Count - 1)];
     }
 }
 
@@ -61,12 +90,14 @@ public class NPC
     public string Nama;
     public int Umur;
     public Gender Gender;
-
+    public bool OwnBuilding;
+    [TextArea] public string shortProfile; // For GPT Prompting
 
     public NPC(string Namas, int Umurs, Gender gender)
     {
         Nama = Namas;
         Umur = Umurs;
         Gender = gender;
+        OwnBuilding = false;
     }
 }

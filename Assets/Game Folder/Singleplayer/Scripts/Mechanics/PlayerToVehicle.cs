@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using VehiclePhysics;
+using VehiclePhysics.UI;
 
 public enum PlayerStateMovement { 
     WALK,
@@ -19,9 +20,12 @@ public class PlayerToVehicle : MonoBehaviour
 
     [SerializeField] PlayerStateMovement playerStates;
 
+    VPVehicleController vehcon;
     VPStandardInput vehicleController;
     VPVisualEffects visualEffectsVeh;
     VPTelemetry telemetryVeh;
+    VehicleBase VehicleBase;
+    [SerializeField] int key;
 
 
     SUPERCharacterAIO superCharCont;
@@ -37,12 +41,13 @@ public class PlayerToVehicle : MonoBehaviour
         vehicleController = Vehicle.GetComponent<VPStandardInput>();
         visualEffectsVeh = Vehicle.GetComponent<VPVisualEffects>();
         telemetryVeh = Vehicle.GetComponent<VPTelemetry>();
+        vehcon = Vehicle.GetComponent<VPVehicleController>();
+        VehicleBase = Vehicle.GetComponent<VehicleBase>();
         if (vehicleController)
         {
             vehicleController.enabled = false;
             visualEffectsVeh.enabled = false;
         }
-
         superCharCont = GetComponent<SUPERCharacterAIO>();
         CharacterColl = GetComponent<CapsuleCollider>();
         playerRB = GetComponent<Rigidbody>();
@@ -64,9 +69,15 @@ public class PlayerToVehicle : MonoBehaviour
                     gameObject.transform.position = GetOutCarPos.position;
                     MainCams.transform.position = CameraAnchorCar.position;
                     MainCams.transform.rotation = CameraAnchorCar.rotation;
-                    Debug.Log(telemetryVeh.vehicle.localAcceleration.magnitude.ToString());
+                    key = VehicleBase.data.Get(Channel.Input, InputData.Key);
+                    //Debug.Log(telemetryVeh.vehicle.localAcceleration.magnitude.ToString());
                     if (Input.GetKeyDown(KeyCode.E) && telemetryVeh.vehicle.localAcceleration.magnitude < 1)
                         GetOutCar();
+
+                    if (Input.GetKeyDown(KeyCode.J))
+                    {
+                        VehicleBase.data.Set(Channel.Input, InputData.Key, -1);
+                    }
                     break;
                 }
         }

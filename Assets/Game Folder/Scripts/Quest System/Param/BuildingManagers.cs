@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BuildingParam : MonoBehaviour
+public class BuildingManager : MonoBehaviour
 {
-    public static BuildingParam _Instance;
+    public static BuildingManager _Instance;
 
     [SerializeField] List<Building> buildingList;
 
@@ -13,7 +13,7 @@ public class BuildingParam : MonoBehaviour
         _Instance = this;
     }
 
-    public static BuildingParam Instance
+    public static BuildingManager Instance
     {
         get
         {
@@ -35,5 +35,10 @@ public class BuildingParam : MonoBehaviour
     {
         buildingList.Add(build);
         return build;
+    }
+
+    public Building GetRandomBuilding()
+    {
+        return buildingList[Random.Range(0, buildingList.Count - 1)];
     }
 }

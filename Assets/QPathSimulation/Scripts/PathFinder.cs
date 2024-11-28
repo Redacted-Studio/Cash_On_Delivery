@@ -219,7 +219,7 @@ public class PathFinder : MonoBehaviour {
     void SpawnRandom() {
         List<Path> paths = RandomPath();
         float dist = Vector3.Distance(players.transform.position, paths.First().PosOfA);
-        if (dist < SafeSpawn || dist > DespawnDistance)
+        if (dist < SafeSpawn)
         {
             paths = null;
             return;
