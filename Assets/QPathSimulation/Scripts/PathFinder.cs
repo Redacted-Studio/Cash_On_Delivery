@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEditor.Rendering;
 
 public enum Execution {
     Synchronous,
@@ -303,15 +304,6 @@ public class PathFinder : MonoBehaviour {
     /// </summary>
     IEnumerator RemoveCars() {
         while (true) {
-            foreach (Transform car in cars)
-            {
-                float dist = Vector3.Distance(car.position, players.transform.position);
-                if (dist > DespawnDistance)
-                {
-                    cars.Remove(car);
-                    amount = cars.Count;
-                }
-            }
             cars.RemoveAll(item => item == null);
             amount = cars.Count;
             yield return new WaitForSeconds(2);

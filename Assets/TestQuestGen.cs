@@ -7,6 +7,7 @@ public class TestQuestGen : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         QuestManager.Instance.GenerateQuest();
+        
     }
 }
 

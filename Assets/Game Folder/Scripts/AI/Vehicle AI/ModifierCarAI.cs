@@ -1,12 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using VehiclePhysics;
 
 public class ModifierCarAI : MonoBehaviour
 {
     public List<Transform> checks = new List<Transform> { null };
     public List<Transform> Sidechecks = new List<Transform> { null };
     public PathFollower pFollower;
+
+    public GameObject[] Tires;
+
+    public Light[] lights;
 
     public bool objectDetectedFront = false;
     public bool objectDetectedSide = false;
@@ -33,6 +38,22 @@ public class ModifierCarAI : MonoBehaviour
         SideObjectChecks();
 
         if (IsAnythingInFront()) SetSpeed(0);
+        if (TurnOnLight()) LightsOnOff(true);
+        else LightsOnOff(false);
+    }
+
+    void LightsOnOff(bool T)
+    {
+        foreach(Light l in lights)
+        {
+            if (T == true)
+                l.intensity = 250f;
+            else l.intensity = 0f;
+        }
+    }
+    public bool TurnOnLight()
+    {
+        return TimeManager.Hour < 7 || TimeManager.Hour < 18;
     }
 
     public bool IsAnythingInFront()
