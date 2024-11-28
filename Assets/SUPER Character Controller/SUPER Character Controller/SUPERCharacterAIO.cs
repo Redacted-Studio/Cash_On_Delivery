@@ -32,6 +32,7 @@ public class SUPERCharacterAIO : MonoBehaviour{
     //
     //Both
     public Camera playerCamera;
+    public GameObject CameraAnchor;
     public bool  enableCameraControl = true, lockAndHideMouse = true, autoGenerateCrosshair = true, showCrosshairIn3rdPerson = false, drawPrimitiveUI = false;
     public Sprite crosshairSprite;
     public PerspectiveModes cameraPerspective = PerspectiveModes._1stPerson;

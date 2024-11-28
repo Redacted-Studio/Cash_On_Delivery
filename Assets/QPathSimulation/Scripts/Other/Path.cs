@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using JetBrains.Annotations;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
@@ -30,6 +31,10 @@ public class Path {
     /// Stores second node of path
     /// </summary>
     [SerializeField] Node b;
+    /// <summary>
+    /// Stores third node of path
+    /// </summary>
+    [SerializeField] Node c;
     /// <summary>
     /// Stores cost of traveling this path
     /// </summary>
@@ -91,11 +96,21 @@ public class Path {
         get { return b == null ? -1 : b.ID; }
     }
 
+    public int IDOfC
+    {
+        get { return c == null ? -1 : c.ID; }
+    }
+
     /// <summary>
     /// Returns the identifier of the second node
     /// </summary>
     public Vector3 PosOfA {
         get { return a == null ? Vector3.zero : a.position; }
+    }
+
+    public Vector3 PosOfC
+    {
+        get { return c == null ? Vector3.zero : c.position; }
     }
 
     /// <summary>
@@ -139,19 +154,19 @@ public class Path {
     /// <param name="Parent">Paretn of object</param>
     /// <param name="Hide">Hide mark</param>
     /// <param name="Prioritet">Priority mark</param>
-    public Path(Node A, Node B, Transform Parent, HidePath Hide = HidePath.Shown, BlockType Prioritet = BlockType.Open) {
+    public Path(Node A, Node B, Transform Parent, HidePath Hide = HidePath.Shown, BlockType Prioritet = BlockType.Open, Node C = null) {
         queueTimes = new List<float>();
         hide = Hide;
         street = Parent.GetComponent<Street>();
         priority = Prioritet;
-        a = A; b = B;
-        //if (this.hide < HidePath.Hiden) {
-            //var go = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        a = A; b = B; c = C;
+        if (this.hide < HidePath.Hiden) {
+            var go = GameObject.CreatePrimitive(PrimitiveType.Cube);
             //go.GetComponent<BoxCollider>().size = new Vector3(1.4f, 1f, 1f);
-            //transform = go.transform;
-            //transform.parent = Parent;
+            transform = go.transform;
+            transform.parent = Parent;
             //go.GetComponent<Renderer>().material = (Material)AssetDatabase.LoadAssetAtPath("Assets/QPathSimulation/Materials/street.mat", typeof(Material));
-        //}
+        }
         Visualize();
     }
     /// <summary>
@@ -183,8 +198,7 @@ public class Path {
     /// The method is responsible for adding vehicle to queue
     /// </summary>
     /// <returns>Returns number of vehicles in queue</returns>
-    public int EnterQueue(GameObject car) {
-        if (entireQueue == 0) firstCarQueue = car;
+    public int EnterQueue() {
         entireQueue++;
         queueTimes.Add(Time.time);
         return entireQueue - 1;
@@ -193,7 +207,6 @@ public class Path {
     /// The method is responsible for delete vehicle to queue
     /// </summary>
     public void LeaveQueue() {
-        firstCarQueue = null;
         queueTimes.RemoveAt(0);
         ++leftQueue;
     }

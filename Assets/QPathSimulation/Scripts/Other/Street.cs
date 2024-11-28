@@ -89,6 +89,10 @@ public class Street : MonoBehaviour {
     /// </summary>
     public Node center;
     /// <summary>
+    /// Stores a list of Building
+    /// </summary>
+    public List<Building> building;
+    /// <summary>
     /// Stores the number of paths "from-to"
     /// </summary>
     [HideInInspector] public int iFrom = 2;
@@ -137,12 +141,25 @@ public class Street : MonoBehaviour {
 #endif  
     }
 
+    public Transform GetRandomSpawnPoint()
+    {
+        if (building.Count > 0)
+        {
+            Debug.Log("Spawn Building");
+            return building[Random.Range(0, building.Count - 1)].GetSpawnPoint();
+        }
+        
+        return null;
+    }
+
     public void Init(Junction From, Junction To, int fromCount = 1, int toCount = 1) {
         iFrom = fromCount; iTo = toCount;
         this.from = From; this.to = To;
         From.AddJoint(new Joint(this, false));
         To.AddJoint(new Joint(this, true));
         Vector3 centerPos = (To.transform.position + From.transform.position) / 2;
+        // Vector3 center1Pos = (To.transform.position + From.transform.position) / 4;
+        // Vector3 center2Pos = (To.transform.position - center1Pos);
         this.center = new Node(centerPos);
         nodes.Add(this.center);
         Calculate();

@@ -150,7 +150,7 @@ public class Junction : MonoBehaviour {
                 { 
                     for (int k = 0; k < joints[i].output.Count; k++)
                     {
-                        UnityEngine.Debug.DrawLine(joints[i].input[j].position, joints[i].output[k].position, Color.yellow);
+                        UnityEngine.Debug.DrawLine(joints[i].input[j].position, joints[i].output[k].position, Color.cyan);
                     }
                 }
             }
@@ -472,14 +472,17 @@ public class Junction : MonoBehaviour {
             maxRight = joints[rightIndex].output.Count;
             maxStraight = joints[straightIndex].output.Count;
             maxLeft = joints[leftIndex].output.Count;
-            //right and straight at once    
             if (joints[rightIndex].output.Count != 0 && joints[straightIndex].output.Count != 0) {
                 sumWays++;
             }
             //left and straight at once
-            if (joints[leftIndex].output.Count != 0 && individual && joints[straightIndex].output.Count != 0) {
+            if (joints[leftIndex].output.Count != 0 && joints[straightIndex].output.Count != 0)
+            {
                 sumWays++;
             }
+            /*if (joints[leftIndex].output.Count != 0 && individual && joints[straightIndex].output.Count != 0) {
+                sumWays++;
+            }*/
             //left and right at once
             if (joints[straightIndex].output.Count == 0 && joints[rightIndex].output.Count != 0 && joints[leftIndex].output.Count != 0) {
                 sumWays++;
@@ -504,6 +507,16 @@ public class Junction : MonoBehaviour {
             Path pat = new Path(joints[curentIndex].input[maxCurrent - i - 1], joints[rightIndex].output[maxRight - i - 1], transform, HidePath.Internal);
             streetWays[2].Add(pat);
         }
+        /*for (int i = 0; i < wayCounter[0]; i++)
+        {//right
+            Path pat = new Path(joints[curentIndex].input[straightStart - i], joints[straightIndex].output[maxStraight - i - 1], transform, HidePath.Internal);
+            Vector3 posNode = (pat.PosOfA + pat.PosOfB) / 2;
+            Node mid = new Node(posNode);
+            Path pattoMid = new Path(joints[curentIndex].input[straightStart - i], mid, transform, HidePath.Shown);
+            Path pattoEnd = new Path(mid, joints[straightIndex].output[maxStraight - i - 1], transform, HidePath.Shown);
+            streetWays[2].Add(pattoMid);
+            streetWays[2].Add(pattoEnd);
+        }*/
         for (int i = 0; i < wayCounter[1]; i++) {//straight
             Path pat = new Path(joints[curentIndex].input[straightStart - i], joints[straightIndex].output[maxStraight - i - 1], transform, HidePath.Internal);
             streetWays[1].Add(pat);

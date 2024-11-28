@@ -14,7 +14,7 @@ public class PathFollower : MonoBehaviour {
     /// Stores a list of paths for the vehicle to return to
     /// </summary>
     List<Path> returningPath;
-    List<Path> paths;
+    //List<Path> paths;
     float returningDelay; 
     int returningType = -1;
     float waitingTime = 0;
@@ -22,9 +22,9 @@ public class PathFollower : MonoBehaviour {
     Material material;
     Coroutine routine;
     ModifierCarAI carAI;
-    bool Stop;
-    int index = 0;
-    public bool isAnythingObstructing;
+    bool Stop = false;
+    bool isAnythingObstructing;
+
     /// <summary>
     /// Method run when the object is created
     /// </summary>
@@ -44,7 +44,7 @@ public class PathFollower : MonoBehaviour {
 
     private void Update()
     {
-        isAnythingObstructing = carAI.isAnythingInFront();
+        isAnythingObstructing = carAI.IsAnythingInFront();
         /*if (paths[index + 1].CanEnter(BlockType.Open) == false && paths[index].firstCarQueue == this.gameObject)
         {
             carAI.frontdistanceChecker = 0;
@@ -65,7 +65,7 @@ public class PathFollower : MonoBehaviour {
         returningType = ReturningType;
         returningDelay = WaitingTime;
         returningPath = ReturningPath;
-        paths = Path;
+        //paths = Path;
         if (routine != null) {
             StopCoroutine(routine);
         }
@@ -82,6 +82,7 @@ public class PathFollower : MonoBehaviour {
         }
         int QueuePos;
         Color[] gradient = { Color.white, Color.green, Color.blue, Color.red };
+        int index = 0;
         int end = path.Count;
         float dist, dist1, colo = 0;
         bool endpoint = false;
@@ -98,7 +99,7 @@ public class PathFollower : MonoBehaviour {
         Vector3? target2 = null;
         transform.position = path[index].PosOfA;
         transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(path[index].PosOfB - transform.position), 400f);
-        QueuePos = path[index].EnterQueue(this.gameObject);
+        QueuePos = path[index].EnterQueue();
         dir = path[index].PosOfA - path[index].PosOfB;
         dir.Normalize();
         float padding = 0.4f;
@@ -132,10 +133,10 @@ public class PathFollower : MonoBehaviour {
                 if (!endpoint && dist1 < 1.3f && path[index].leftQueue == QueuePos && path[index + 1].CanEnter(path[index].priority)) {
                     endpoint = true;
                     path[index].LeaveQueue();
-                    QueuePos = path[index + 1].EnterQueue(this.gameObject);
+                    QueuePos = path[index + 1].EnterQueue();
                     waitingTime = 0;
                     //back = path[index].maxInQueue > 1 ? (QueuePos - path[index].sQueue + 1f) : padding;
-                    //dist = Vector3.Distance(transform.position, target);
+                    dist = Vector3.Distance(transform.position, target);
                     dist = dist1;
                     back = 0;
                 }
@@ -153,10 +154,10 @@ public class PathFollower : MonoBehaviour {
                 tar = angle < 3 ? tar : tar / (angle / 3);
             }
             target = path[index].PosOfB + dir * back;
-            //yield return new WaitForFixedUpdate();
+            yield return new WaitForFixedUpdate();
             velocity = Mathf.SmoothDamp(velocity, tar, ref colo, 0.3f);
-            if (dist >= 0.1f && isAnythingObstructing == false && Stop == false) {
-                
+            if (dist >= 0.1f && isAnythingObstructing == false && Stop == false)
+            {
                 transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(target - transform.position), 100f * Time.deltaTime);
                 transform.position = transform.position + transform.forward * velocity * Time.deltaTime * 1;
             }

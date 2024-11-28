@@ -32,18 +32,12 @@ public class ModifierCarAI : MonoBehaviour
         ObjectChecks();
         SideObjectChecks();
 
-        if (objectDetectedFront || objectDetectedSide)
-            SetSpeed(0);
+        if (IsAnythingInFront()) SetSpeed(0);
     }
 
-    public void returnDistanceChekcer()
+    public bool IsAnythingInFront()
     {
-        frontdistanceChecker = distCheck;
-    }
-
-    public bool isAnythingInFront()
-    {
-        return (objectDetectedFront || objectDetectedSide);
+        return (objectDetectedFront == true || objectDetectedSide == true);
     }
 
     void ObjectChecks()

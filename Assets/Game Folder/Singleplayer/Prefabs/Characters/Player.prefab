@@ -215,7 +215,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -588,7 +588,7 @@ GameObject:
   - component: {fileID: 8721309251081001495}
   m_Layer: 2
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -608,6 +608,7 @@ Transform:
   m_Children:
   - {fileID: 7753483762879583585}
   - {fileID: 675208061844461519}
+  - {fileID: 5443311051784539074}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &8475940919818008681
@@ -674,6 +675,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controllerPaused: 0
   playerCamera: {fileID: 8454376781563182894}
+  CameraAnchor: {fileID: 0}
   enableCameraControl: 1
   lockAndHideMouse: 1
   autoGenerateCrosshair: 0
@@ -827,7 +829,7 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 10daf6f7903edbe4db79261c2c199a5a, type: 3}
     - {fileID: 8300000, guid: 42f1f9376eed8a14fb0e8e2b018befe9, type: 3}
     - {fileID: 8300000, guid: 93aa15f45263d7c40b4a48f63599f7c2, type: 3}
-  enableHeadbob: 1
+  enableHeadbob: 0
   headbobSpeed: 2
   headbobPower: 2
   ZTilt: 0.5
@@ -978,8 +980,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Vehicle: {fileID: 0}
-  CameraAnchorWalk: {fileID: 0}
+  CameraAnchorWalk: {fileID: 7753483762879583585}
   CameraAnchorCar: {fileID: 0}
+  GetOutCarPos: {fileID: 0}
   playerStates: 0
   MainCams: {fileID: 8454376781563182894}
 --- !u!1 &3646868095721685742
@@ -1291,12 +1294,12 @@ Transform:
   m_GameObject: {fileID: 5552513954560119238}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1625556604570907117}
-  m_Father: {fileID: 7753483762879583585}
+  m_Father: {fileID: 5195599976688426809}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &8454376781563182894
 Camera:
@@ -1526,8 +1529,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 5443311051784539074}
+  m_Children: []
   m_Father: {fileID: 5195599976688426809}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7028107241985511652

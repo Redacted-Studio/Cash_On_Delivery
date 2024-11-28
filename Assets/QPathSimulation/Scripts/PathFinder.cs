@@ -19,6 +19,9 @@ public class PathFinder : MonoBehaviour {
     [SerializeField] GameObject[] Trucks;
     [SerializeField] GameObject[] EmergencyCar;
 
+    [SerializeField] private GameObject players;
+    public float SafeSpawn;
+
     /// <summary>
     /// Stores a list of created vehicles
     /// </summary>
@@ -104,6 +107,11 @@ public class PathFinder : MonoBehaviour {
         StartCoroutine(RemoveCars());
     }
 
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(players.transform.position, SafeSpawn);
+    }
+
     /// QPathFinder
     /// <summary>
     /// Method run when the object is destroyed
@@ -170,7 +178,8 @@ public class PathFinder : MonoBehaviour {
         if (targetType == 4) {
             path.Last().street.spawns[4]--;
         }
-        PathFollower follower = SpawnCar();
+        Street str = path.First().street;
+        PathFollower follower = SpawnCarCustom(str.GetRandomSpawnPoint());
         if (returnNodePath != null && returnNodePath.Count != 0) {
             List<Path> returnPath = NodesToPath(returnNodePath);
             follower.Follow(path, targetType, targetType == 2 ? shopingDelay : workDelay, returnPath);
@@ -178,12 +187,42 @@ public class PathFinder : MonoBehaviour {
             follower.Follow(path);
         }
     }
+
+    PathFollower SpawnCarCustom(Transform spawnPoint = null)
+    {
+        if (!carsBox)
+        {
+            carsBox = (new GameObject("Cars")).transform;
+        }
+
+        GameObject go;
+        if (spawnPoint != null)
+        {
+            go = Instantiate(CivilianCar[Random.Range(0, CivilianCar.Length - 1)], spawnPoint);
+            //go = Instantiate(CivilianCar[Random.Range(0, CivilianCar.Length - 1)], new Vector3(0,0,0), Quaternion.identity);
+            go.tag = "CarWithDestination";
+            go.gameObject.name = "Mobil Dari bangunan";
+        } 
+        else go = Instantiate(CivilianCar[Random.Range(0, CivilianCar.Length - 1)]);        
+        //go.transform.localScale = new Vector3(0.4f, 0.4f, 0.8f);
+        go.transform.parent = carsBox;
+        cars.Add(go.transform);
+        PathFollower follower = go.AddComponent<PathFollower>();
+        return follower;
+    }
     /// <summary>
     /// The method is responsible for creating a vehicle going to a random destination
     /// </summary>
     void SpawnRandom() {
-        PathFollower follower = SpawnCar();
         List<Path> paths = RandomPath();
+        float dist = Vector3.Distance(players.transform.position, paths.First().PosOfA);
+        if (dist < SafeSpawn)
+        {
+            paths = null;
+            return;
+        }
+        Street s = paths.First().street;
+        PathFollower follower = SpawnCarCustom(s.GetRandomSpawnPoint());
         follower.Follow(paths);
     }
     /// <summary>
@@ -241,6 +280,21 @@ public class PathFinder : MonoBehaviour {
             yield return new WaitForSeconds(spawnFrequency);
         }
     }
+
+    Street NodesIDToStreet(int ID)
+    {
+        foreach (Street s in graphData.allStreets)
+        {
+            foreach(Node n in s.nodes)
+            {
+                if (n.ID == ID)
+                    return s;
+            }
+        }
+
+        return null;
+    }
+
     /// <summary>
     /// Routine is responsible for removing vehicles that have reached their destination
     /// </summary>

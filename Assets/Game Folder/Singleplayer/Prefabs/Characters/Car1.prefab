@@ -555,8 +555,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.16854095, z: 0, w: 0.98569465}
   m_LocalPosition: {x: 16.491524, y: 1.2019999, z: 55.45842}
-  m_LocalScale: {x: 0.10000001, y: 0.1, z: 0.10000001}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7380341048524656356}
   - {fileID: 9161344648675684109}
@@ -713,11 +713,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   checks:
-  - {fileID: 0}
+  - {fileID: 5248037468244895542}
+  Sidechecks:
+  - {fileID: 4835789947518940884}
+  - {fileID: 6448979423082929840}
   pFollower: {fileID: 0}
-  objectDetected: 0
+  objectDetectedFront: 0
+  objectDetectedSide: 0
   speedLimit: 20
   recklessnessThreshold: 0
+  frontdistanceChecker: 0
   seenLayers:
     serializedVersion: 2
     m_Bits: 4294967295

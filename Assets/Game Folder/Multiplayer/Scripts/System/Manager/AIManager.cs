@@ -4,7 +4,7 @@ using Unity.Netcode;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class AIManager : NetworkBehaviour
+public class AIManager : MonoBehaviour
 {
     static AIManager instance;
     private NetworkVariable<int> aiNumber = new NetworkVariable<int>();
