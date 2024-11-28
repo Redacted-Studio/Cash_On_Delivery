@@ -21,6 +21,8 @@ public class PathFinder : MonoBehaviour {
 
     [SerializeField] private GameObject players;
     public float SafeSpawn;
+    public float DespawnDistance;
+    public LayerMask RayCheck;
 
     /// <summary>
     /// Stores a list of created vehicles
@@ -110,6 +112,7 @@ public class PathFinder : MonoBehaviour {
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(players.transform.position, SafeSpawn);
+        Gizmos.DrawWireSphere(players.transform.position, DespawnDistance);
     }
 
     /// QPathFinder
@@ -216,7 +219,7 @@ public class PathFinder : MonoBehaviour {
     void SpawnRandom() {
         List<Path> paths = RandomPath();
         float dist = Vector3.Distance(players.transform.position, paths.First().PosOfA);
-        if (dist < SafeSpawn)
+        if (dist < SafeSpawn || dist > DespawnDistance)
         {
             paths = null;
             return;
@@ -300,6 +303,15 @@ public class PathFinder : MonoBehaviour {
     /// </summary>
     IEnumerator RemoveCars() {
         while (true) {
+            foreach (Transform car in cars)
+            {
+                float dist = Vector3.Distance(car.position, players.transform.position);
+                if (dist > DespawnDistance)
+                {
+                    cars.Remove(car);
+                    amount = cars.Count;
+                }
+            }
             cars.RemoveAll(item => item == null);
             amount = cars.Count;
             yield return new WaitForSeconds(2);
