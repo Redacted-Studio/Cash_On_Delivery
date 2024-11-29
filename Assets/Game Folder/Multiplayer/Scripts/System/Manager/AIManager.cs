@@ -82,12 +82,12 @@ public class AIManager : MonoBehaviour
         for (int i = 0; RegAI.Count < MaxAILimit; i++)
         {
             SpawnAIFun();
+        }
 
-            foreach (NormalPedestarian ai in RegAI)
-            {
-                if (ai.isHavingDestination == false)
-                    ai.SetDestination(GetRandomDestination());
-            }
+        foreach (NormalPedestarian ai in RegAI)
+        {
+            if (ai.isHavingDestination == false)
+                ai.SetDestination(GetRandomDestination());
         }
     }
 

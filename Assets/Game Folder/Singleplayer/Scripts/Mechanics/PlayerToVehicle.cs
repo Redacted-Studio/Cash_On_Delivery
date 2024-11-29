@@ -27,6 +27,7 @@ public class PlayerToVehicle : MonoBehaviour
     VPTelemetry telemetryVeh;
     VehicleBase VehicleBase;
     [SerializeField] int key;
+    bool masukMobil;
 
 
     SUPERCharacterAIO superCharCont;
@@ -66,25 +67,38 @@ public class PlayerToVehicle : MonoBehaviour
                     MainCams.transform.position = CameraAnchorWalk.position;
                     superCharCont.EnambleCameraMovement = true;
                     superCharCont.enableMovementControl = true;
+                    masukMobil = false;
                     //MainCams.transform.rotation = CameraAnchorWalk.rotation;
                     break;
                 }
             case PlayerStateMovement.CAR:
                 {
-                    superCharCont.enabled = false;
-                    superCharCont.enableCameraControl = true;
+
+                    //superCharCont.enabled = false;
+                    if (Input.GetKey(KeyCode.LeftAlt))
+                    {
+                        superCharCont.enableCameraControl = true;
+                    }
+                    else
+                    {
+                        transform.rotation = CameraAnchorCar.rotation;
+                        superCharCont.enableCameraControl = false;
+                        MainCams.transform.rotation = CameraAnchorCar.rotation;
+                    }
+                    superCharCont.enableMovementControl = false;
                     gameObject.transform.position = GetOutCarPos.position;
                     MainCams.transform.position = CameraAnchorCar.position;
-                    MainCams.transform.rotation = CameraAnchorCar.rotation;
+                    //MainCams.transform.rotation = CameraAnchorCar.rotation;
                     key = VehicleBase.data.Get(Channel.Input, InputData.Key);
                     //Debug.Log(telemetryVeh.vehicle.localAcceleration.magnitude.ToString());
-                    if (Input.GetKeyDown(KeyCode.E) && telemetryVeh.vehicle.localAcceleration.magnitude < 1)
-                        GetOutCar();
 
                     if (Input.GetKeyDown(KeyCode.J))
                     {
                         VehicleBase.data.Set(Channel.Input, InputData.Key, -1);
                     }
+                    if (Input.GetKeyDown(KeyCode.E) && telemetryVeh.vehicle.localAcceleration.magnitude < 1 && masukMobil == true)
+                        GetOutCar();
+                    masukMobil = true;
                     break;
                 }
             case PlayerStateMovement.INVENTORY:
@@ -108,9 +122,10 @@ public class PlayerToVehicle : MonoBehaviour
         Debug.Log("masuk Mobil");
         vehicleController.enabled = true;
         visualEffectsVeh.enabled= true;
-        playerRB.isKinematic = true;
+        //playerRB.isKinematic = true;
         CharacterColl.enabled = false;
         playerStates = PlayerStateMovement.CAR;
+        
     }
 
     public void GetOutCar()
@@ -121,6 +136,7 @@ public class PlayerToVehicle : MonoBehaviour
         playerRB.isKinematic = false;
         CharacterColl.enabled = true;
         playerStates = PlayerStateMovement.WALK;
+        
     }
 
     public void evaluateOutInCar()
