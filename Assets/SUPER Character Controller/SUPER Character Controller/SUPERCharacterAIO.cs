@@ -35,6 +35,7 @@ public class SUPERCharacterAIO : MonoBehaviour{
     public GameObject CameraAnchor;
     public bool  enableCameraControl = true, lockAndHideMouse = true, autoGenerateCrosshair = true, showCrosshairIn3rdPerson = false, drawPrimitiveUI = false;
     public Sprite crosshairSprite;
+        public bool EnambleCameraMovement = true;
     public PerspectiveModes cameraPerspective = PerspectiveModes._1stPerson;
     //use mouse wheel to switch modes. (too close will set it to fps mode and attempting to zoom out from fps will switch to tps mode)
     public bool automaticallySwitchPerspective = true;
@@ -422,8 +423,8 @@ public class SUPERCharacterAIO : MonoBehaviour{
     }
     void Update(){
         if(!controllerPaused){
-        #region Input
-        #if ENABLE_INPUT_SYSTEM
+                #region Input
+#if ENABLE_INPUT_SYSTEM
             MouseXY.x = Mouse.current.delta.y.ReadValue()/50;
             MouseXY.y = Mouse.current.delta.x.ReadValue()/50;
             
@@ -447,16 +448,15 @@ public class SUPERCharacterAIO : MonoBehaviour{
                 slideInput_Momentary = Keyboard.current[slideKey].isPressed;
                 slideInput_FrameOf = Keyboard.current[slideKey].wasPressedThisFrame;
              }
-            #if SAIO_ENABLE_PARKOUR
+#if SAIO_ENABLE_PARKOUR
             vaultInput = Keyboard.current[VaultKey].isPressed;
-            #endif
+#endif
             MovInput.x = Keyboard.current.aKey.isPressed ? -1 : Keyboard.current.dKey.isPressed ? 1 : 0;
             MovInput.y = Keyboard.current.wKey.isPressed ? 1 : Keyboard.current.sKey.isPressed ? -1 : 0;
-        #else
-            //camera
-            MouseXY.x = Input.GetAxis("Mouse Y");
-            MouseXY.y = Input.GetAxis("Mouse X");
-            mouseScrollWheel = Input.GetAxis("Mouse ScrollWheel");
+#else
+                //camera
+                CameraMovement();
+                mouseScrollWheel = Input.GetAxis("Mouse ScrollWheel");
             perspecTog = Input.GetKeyDown(perspectiveSwitchingKey_L);
             interactInput =Input.GetKeyDown(interactKey_L);
             //movement
@@ -578,6 +578,18 @@ public class SUPERCharacterAIO : MonoBehaviour{
         UpdateAnimationTriggers(controllerPaused);
         #endregion
     }
+
+        public void CameraMovement()
+        {
+            if (EnambleCameraMovement == false)
+            {
+                MouseXY.x = 0;
+                MouseXY.y = 0;
+                return;
+            }
+            MouseXY.x = Input.GetAxis("Mouse Y");
+            MouseXY.y = Input.GetAxis("Mouse X");
+        }
     void FixedUpdate() {
         if(!controllerPaused){
 

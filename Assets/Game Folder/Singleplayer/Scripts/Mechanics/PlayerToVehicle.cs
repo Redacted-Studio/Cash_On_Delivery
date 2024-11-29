@@ -8,7 +8,8 @@ using VehiclePhysics.UI;
 
 public enum PlayerStateMovement { 
     WALK,
-    CAR
+    CAR,
+    INVENTORY
 }
 
 public class PlayerToVehicle : MonoBehaviour
@@ -18,7 +19,7 @@ public class PlayerToVehicle : MonoBehaviour
     [SerializeField] Transform CameraAnchorCar;
     [SerializeField] Transform GetOutCarPos;
 
-    [SerializeField] PlayerStateMovement playerStates;
+    public PlayerStateMovement playerStates;
 
     VPVehicleController vehcon;
     VPStandardInput vehicleController;
@@ -60,12 +61,17 @@ public class PlayerToVehicle : MonoBehaviour
         {
             case PlayerStateMovement.WALK:
                 {
+                    superCharCont.enabled = true;
+                    superCharCont.enableCameraControl = true;
                     MainCams.transform.position = CameraAnchorWalk.position;
+                    superCharCont.EnambleCameraMovement = true;
                     //MainCams.transform.rotation = CameraAnchorWalk.rotation;
                     break;
                 }
             case PlayerStateMovement.CAR:
                 {
+                    superCharCont.enabled = false;
+                    superCharCont.enableCameraControl = true;
                     gameObject.transform.position = GetOutCarPos.position;
                     MainCams.transform.position = CameraAnchorCar.position;
                     MainCams.transform.rotation = CameraAnchorCar.rotation;
@@ -78,6 +84,11 @@ public class PlayerToVehicle : MonoBehaviour
                     {
                         VehicleBase.data.Set(Channel.Input, InputData.Key, -1);
                     }
+                    break;
+                }
+            case PlayerStateMovement.INVENTORY:
+                {
+                    superCharCont.EnambleCameraMovement = false;
                     break;
                 }
         }
@@ -95,7 +106,6 @@ public class PlayerToVehicle : MonoBehaviour
         Debug.Log("masuk Mobil");
         vehicleController.enabled = true;
         visualEffectsVeh.enabled= true;
-        superCharCont.enabled = false;
         playerRB.isKinematic = true;
         CharacterColl.enabled = false;
         playerStates = PlayerStateMovement.CAR;
@@ -106,7 +116,6 @@ public class PlayerToVehicle : MonoBehaviour
         Debug.Log("keluar Mobil");
         vehicleController.enabled = false;
         visualEffectsVeh.enabled = false;
-        superCharCont.enabled = true;
         playerRB.isKinematic = false;
         CharacterColl.enabled = true;
         playerStates = PlayerStateMovement.WALK;

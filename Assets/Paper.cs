@@ -10,7 +10,6 @@ public class Paper : MonoBehaviour
     public TextMeshProUGUI Penerima;
     public Image FragileImg;
     bool isFragiles;
-    public int QuestID;
 
     public void Set(string alamat, string penerima, bool isFragile = false)
     {
@@ -18,10 +17,5 @@ public class Paper : MonoBehaviour
         Penerima.text = "Penerima : " + penerima;
         isFragiles = isFragile;
         if (isFragile) FragileImg.gameObject.SetActive(true);
-    }
-
-    public void SetQuest(int q)
-    {
-        QuestID = q;
     }
 }

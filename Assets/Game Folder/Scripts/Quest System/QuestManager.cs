@@ -9,6 +9,8 @@ public class QuestManager : MonoBehaviour
     static QuestManager _Instance;
     public TextMeshProUGUI textMeshProUGUI;
     public GameObject QuestPool;
+    public Transform ObjectPool;
+    public int FinishedQuest;
 
     [Header("QUESTING LIST")]
     public List<Quest> quests;
@@ -27,17 +29,6 @@ public class QuestManager : MonoBehaviour
             return _Instance;
         }
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void GenerateQuest()
     {
@@ -47,13 +38,29 @@ public class QuestManager : MonoBehaviour
         paket.Alamat = tempat.GetAlamat();
         paket.Penerima = tempat.GetOwner().Nama;
         paket.Position = tempat.tempatNerimaPaket;
+        paket.NamaPaket = "Paket " + tempat.GetOwner().Nama;
         quests.Add(paket);
         GameObject Invoice = Instantiate(Papers[UnityEngine.Random.Range(0, Papers.Count - 1)]);
-        Paper pap = Invoice.GetComponent<Paper>();
+        Invoice.transform.parent = QuestPool.transform;
+        BoxPaket paps = Invoice.GetComponent<BoxPaket>();
+        paps.SetQuest(paket);
+        Paper pap = paps.plakatPaketRef;
         pap.Set(paket.Alamat, paket.Penerima, paket.isFragile);
-        pap.transform.parent = QuestPool.transform;
-        pap.SetQuest(paket.QuestID);
+        //pap.transform.parent = QuestPool.transform;
     }
+
+    public void FinishQuest(int ID)
+    {
+        for (int i = 0; i < quests.Count; i++)
+        {
+            if (quests[i].QuestID == ID)
+            {
+                quests.RemoveAt(i);
+                FinishedQuest++;
+            }
+        }
+    }
+    
 }
 
 [Serializable]
