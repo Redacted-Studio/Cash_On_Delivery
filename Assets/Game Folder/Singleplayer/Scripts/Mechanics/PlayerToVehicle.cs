@@ -29,10 +29,12 @@ public class PlayerToVehicle : MonoBehaviour
     [SerializeField] int key;
     bool masukMobil;
 
+    public GameObject minimapCamera;
 
     SUPERCharacterAIO superCharCont;
     CapsuleCollider CharacterColl;
     Rigidbody playerRB;
+    public NgecekInventory invents;
 
     // Camera Handler
     [SerializeField] Camera MainCams;
@@ -58,6 +60,7 @@ public class PlayerToVehicle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        minimapCamera.transform.position = MainCams.transform.position + (Vector3.up * 50);
         switch (playerStates)
         {
             case PlayerStateMovement.WALK:
@@ -103,6 +106,8 @@ public class PlayerToVehicle : MonoBehaviour
                 }
             case PlayerStateMovement.INVENTORY:
                 {
+                    if (Input.GetKeyDown(KeyCode.Escape))
+                        invents.BukaInventory();
                     superCharCont.EnambleCameraMovement = false;
                     superCharCont.enableMovementControl = false;
                     break;

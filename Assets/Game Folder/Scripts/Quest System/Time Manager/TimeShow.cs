@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -10,6 +11,7 @@ public class TimeShow : MonoBehaviour
     {
         TimeManager.onGetStartingTimeMinute += UpdateTime;
         TimeManager.onGetStartingTimeHour += UpdateTime;
+        UpdateTime();
     }
 
     private void Awake()

@@ -56,7 +56,7 @@ public class VehicleInventory : MonoBehaviour
         Invs.InventoryContent[i].UiText.gameObject.SetActive(false);
         Invs.InventoryContent[i].button.gameObject.SetActive(false);
         Invs.InventoryContent[i].diIsi = false;
-        Inventory.RemoveAt(i);
+        Inventory[i] = null;
     }
 
     public NgecekInventory setInvs(NgecekInventory q)

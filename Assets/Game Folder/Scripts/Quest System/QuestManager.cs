@@ -22,6 +22,11 @@ public class QuestManager : MonoBehaviour
         _Instance = this;
     }
 
+    private void Start()
+    {
+        textMeshProUGUI.text = "Quest Available : " + quests.Count;
+    }
+
     public static QuestManager Instance
     {
         get
@@ -46,6 +51,7 @@ public class QuestManager : MonoBehaviour
         paps.SetQuest(paket);
         Paper pap = paps.plakatPaketRef;
         pap.Set(paket.Alamat, paket.Penerima, paket.isFragile);
+        textMeshProUGUI.text = "Quest Available : " + quests.Count;
         //pap.transform.parent = QuestPool.transform;
     }
 
@@ -57,6 +63,7 @@ public class QuestManager : MonoBehaviour
             {
                 quests.RemoveAt(i);
                 FinishedQuest++;
+                textMeshProUGUI.text = "Quest Available : " + quests.Count;
             }
         }
     }
