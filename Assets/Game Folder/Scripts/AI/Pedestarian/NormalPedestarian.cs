@@ -20,15 +20,16 @@ public class NormalPedestarian : AIBase
 
     [Header("Pedestarian Destination Controller")]
     [SerializeField] PedestarianDestination destination;
-    bool isHavingDestination, isMovingToDestination, isOwningVehicle, isMovingToVehicle;
+    public bool isHavingDestination;
+        bool isMovingToDestination, isOwningVehicle, isMovingToVehicle;
 
     [Header("Component Refrences")]
     NavMeshAgent agent;
     [SerializeField] NormalDriving Car;
     Vector3 myCarDoor;
-    private AIManager AImanager;
     [SerializeField] private GameObject AIModel;
     private Animator modelAnimator;
+    public NPC profile;
 
     void Start()
     {
@@ -40,20 +41,17 @@ public class NormalPedestarian : AIBase
             myCarDoor = Car.GetDriverDoorPosition().position;
         }
 
-        AImanager = AIManager.GetInstances();
-
         if(AIModel)
         {
             modelAnimator = AIModel.GetComponent<Animator>();
-        }
+        }       
 
         //StartCoroutine(Brain());
     }
 
     override public void onTick()
     {
-        Brain();
-        
+        Brain(); 
     }
 
     protected void AnimationHandler()
@@ -72,33 +70,32 @@ public class NormalPedestarian : AIBase
     {
         if (destination)
         {
-            if (distanceChecker() > 100)
-                SeekVehicle();
-            else
-                DestinationController();
+            DestinationController();
         }
 
-        if (agent.isOnOffMeshLink)
-        {
-            OffMeshLinkData data = agent.currentOffMeshLinkData;
-            modelAnimator.SetBool("isWalking", true);
+        //AnimationHandler();
 
-            //calculate the final point of the link
-            Vector3 endPos = data.endPos + Vector3.up * agent.baseOffset;
+        /*        if (agent.isOnOffMeshLink)
+                {
+                    OffMeshLinkData data = agent.currentOffMeshLinkData;
+                    modelAnimator.SetBool("isWalking", true);
 
-            //Move the agent to the end point
-            agent.transform.position = Vector3.MoveTowards(agent.transform.position, endPos, agent.speed * Time.deltaTime);
-            gameObject.transform.LookAt(Vector3.MoveTowards(agent.transform.position, endPos, agent.speed));
+                    //calculate the final point of the link
+                    Vector3 endPos = data.endPos + Vector3.up * agent.baseOffset;
 
-            //when the agent reach the end point you should tell it, and the agent will "exit" the link and work normally after that
-            if (agent.transform.position == endPos)
-            {
-                agent.CompleteOffMeshLink();
-            }
-        } else
-        {
-            AnimationHandler();
-        }
+                    //Move the agent to the end point
+                    agent.transform.position = Vector3.MoveTowards(agent.transform.position, endPos, agent.speed * Time.deltaTime);
+                    gameObject.transform.LookAt(Vector3.MoveTowards(agent.transform.position, endPos, agent.speed));
+
+                    //when the agent reach the end point you should tell it, and the agent will "exit" the link and work normally after that
+                    if (agent.transform.position == endPos)
+                    {
+                        agent.CompleteOffMeshLink();
+                    }
+                } else
+                {
+                    AnimationHandler();
+                }*/
 
         //Debug.Log("Processing");
     }
@@ -106,6 +103,20 @@ public class NormalPedestarian : AIBase
     protected float distanceChecker()
     {
         return Vector3.Distance(destination.transform.position, transform.position);
+    }
+
+    public void RegisterNPCProfile(NPC profiles)
+    {
+        profile = profiles;
+        if (profiles.Gender == Gender.Laki)
+        {
+            MeshRenderer rend = GetComponent<MeshRenderer>();
+            rend.material.color = Color.blue;
+        } else
+        {
+            MeshRenderer rend = GetComponent<MeshRenderer>();
+            rend.material.color = Color.cyan;
+        }
     }
 
     protected void SeekVehicle()
@@ -126,17 +137,17 @@ public class NormalPedestarian : AIBase
     {
         if (!destination) return;
 
-        SetDestination(destination);
-
-        if (isHavingDestination)
+        if(pedState != pedestarianState.GO_TO_DESTINATION)
         {
             moveTo(destination.transform);
             pedState = pedestarianState.GO_TO_DESTINATION;
         }
 
-        if (agent.remainingDistance == 0 && isHavingDestination)
+        if (agent.remainingDistance <= destination.Radius && isHavingDestination)
         {
-            RemoveDestination();
+            if (destination.getDestinationType() == PedestarianDestinationType.SHOP) RemoveDestination();
+
+            pedState = pedestarianState.IDLE;
             isHavingDestination = false;
         }
     }
@@ -161,8 +172,10 @@ public class NormalPedestarian : AIBase
     /// </summary>
     public void SetDestination(PedestarianDestination destinations)
     {
+        float dist = Vector3.Distance(destinations.transform.position, transform.position);
         destination = destinations;
         isHavingDestination = true;
+        
     }
 
     /// <summary>
@@ -171,6 +184,8 @@ public class NormalPedestarian : AIBase
     protected void RemoveDestination()
     {
         destination = null;
+        AIManager.Instance.UnregisterAI(this);
+        Destroy(gameObject);
     }
     #endregion
 
@@ -183,14 +198,6 @@ public class NormalPedestarian : AIBase
     #endregion
 
     #region Destructor
-
-    /// <summary>
-    /// Destructor For AI
-    /// </summary>
-    private void OnDestroy()
-    {
-        AImanager.UnregisterAI(this);
-    }
 
     #endregion
 

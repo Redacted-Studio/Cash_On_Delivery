@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
 
-public class DestinationBase : NetworkBehaviour
+public class DestinationBase : MonoBehaviour
 {
     public Vector3 Destination;
     public float Radius;

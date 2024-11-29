@@ -65,6 +65,7 @@ public class PlayerToVehicle : MonoBehaviour
                     superCharCont.enableCameraControl = true;
                     MainCams.transform.position = CameraAnchorWalk.position;
                     superCharCont.EnambleCameraMovement = true;
+                    superCharCont.enableMovementControl = true;
                     //MainCams.transform.rotation = CameraAnchorWalk.rotation;
                     break;
                 }
@@ -89,6 +90,7 @@ public class PlayerToVehicle : MonoBehaviour
             case PlayerStateMovement.INVENTORY:
                 {
                     superCharCont.EnambleCameraMovement = false;
+                    superCharCont.enableMovementControl = false;
                     break;
                 }
         }

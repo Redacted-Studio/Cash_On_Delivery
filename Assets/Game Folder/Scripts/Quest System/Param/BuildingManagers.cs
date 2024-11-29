@@ -41,4 +41,9 @@ public class BuildingManager : MonoBehaviour
     {
         return buildingList[Random.Range(0, buildingList.Count - 1)];
     }
+
+    public int GetBuildingCount()
+    {
+        return buildingList.Count;
+    }
 }

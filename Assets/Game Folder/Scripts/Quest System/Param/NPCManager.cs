@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public enum Gender
@@ -50,6 +51,17 @@ public class NPCManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        for (int i = 0;i < BuildingManager.Instance.GetBuildingCount();i++)
+        {
+            var randomizer = UnityEngine.Random.Range(0, 1);
+            var randomNumber = UnityEngine.Random.Range(1, 5);
+            if (randomizer == 1) GenerateNPC(Gender.Laki, randomNumber);
+            else GenerateNPC(Gender.Perempuan, randomNumber);
+        }
+    }
+
     public NPC GetRandomNPC()
     {
         return NPCList[UnityEngine.Random.Range(0, NPCList.Count - 1)];
@@ -91,6 +103,7 @@ public class NPC
     public int Umur;
     public Gender Gender;
     public bool OwnBuilding;
+    public bool isRoaming= false;
     [TextArea] public string shortProfile; // For GPT Prompting
 
     public NPC(string Namas, int Umurs, Gender gender)

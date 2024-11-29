@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 2145677771361882395}
   - component: {fileID: 9106520086295083019}
   - component: {fileID: -1799636534782389590}
+  - component: {fileID: -2046275404786178684}
   m_Layer: 6
   m_Name: Car2
   m_TagString: Untagged
@@ -158,7 +159,7 @@ MonoBehaviour:
   frontdistanceChecker: 0
   seenLayers:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 1088
 --- !u!65 &-1799636534782389590
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -180,6 +181,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.1009166, y: 1.2713361, z: 5.4525137}
   m_Center: {x: 0, y: -0.054281622, z: -0.031929612}
+--- !u!208 &-2046275404786178684
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1697723365285396745}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.0500001, y: 0.63600004, z: 2.726}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: -0.054, z: -0.032}
+  m_TimeToStationary: 0.5
 --- !u!1 &2252531935865309763
 GameObject:
   m_ObjectHideFlags: 0

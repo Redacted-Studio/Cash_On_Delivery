@@ -13,7 +13,7 @@ public class PedestarianDestination : DestinationBase
 {
     [SerializeField] PedestarianDestinationType destinationType;
 
-    PedestarianDestinationType getDestinationType()
+    public PedestarianDestinationType getDestinationType()
     {
         return destinationType;
     }

@@ -1,30 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.Netcode;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class AIManager : MonoBehaviour
 {
-    static AIManager instance;
-    private NetworkVariable<int> aiNumber = new NetworkVariable<int>();
-    private List<AIBase> AIRegistered = new List<AIBase>();
+    static AIManager _instance;
+    public List<NormalPedestarian> RegAI;
     public List<PedestarianDestination> PedestarianDestinations;
+    public List<GameObject> AIPrefab;
+    public Transform pool;
+
+    public int MaxAILimit = 20;
+
+    private void Awake()
+    {
+        _instance = this;
+    }
+
+    public static AIManager Instance
+    {
+        get
+        {
+            return _instance;
+        }
+    }
 
     private void Start()
     {
-        if (instance != null && instance != this) Destroy(this);
-        else if (instance == null) instance = this;
     }
-
-    #region Static Function
-
-    public static AIManager GetInstances()
-    {
-        return instance;
-    }
-
-    #endregion
 
     #region Public Function
 
@@ -32,18 +35,16 @@ public class AIManager : MonoBehaviour
     /// Register AI ke AI Manager
     /// </summary>
     /// <param name="reg"> AIBase Param </param>
-    public void RegisterAI(AIBase reg)
+    public void RegisterAI(NormalPedestarian reg)
     {
-        AIRegistered.Add(reg);
-        aiNumber.Value = AIRegistered.Count;
-        Debug.Log(aiNumber.Value);
+        RegAI.Add(reg);
     }
 
     /// <summary>
     /// Un Register AI
     /// </summary>
     /// <param name="reg"> Harus Inherit dari AIBase </param>
-    public void UnregisterAI(AIBase reg)
+    public void UnregisterAI(NormalPedestarian reg)
     {
         /*for (int i = AIRegistered.Count - 1; i >= 0; i--)
         {
@@ -55,10 +56,8 @@ public class AIManager : MonoBehaviour
                 break;
             }
         }*/
-
-        AIRegistered.Remove(reg);
-        aiNumber.Value = AIRegistered.Count;
-        Debug.Log(aiNumber.Value);
+        reg.profile.isRoaming = false;
+        RegAI.Remove(reg);
 
         /*foreach(var  ai in AIRegistered)
         {
@@ -77,4 +76,38 @@ public class AIManager : MonoBehaviour
     }
 
     #endregion
+
+    private void LateUpdate()
+    {
+        for (int i = 0; RegAI.Count < MaxAILimit; i++)
+        {
+            SpawnAIFun();
+
+            foreach (NormalPedestarian ai in RegAI)
+            {
+                if (ai.isHavingDestination == false)
+                    ai.SetDestination(GetRandomDestination());
+            }
+        }
+    }
+
+    protected void SpawnAIFun()
+    {
+        //if (RegAI.Count > MaxAILimit) return;
+
+        PedestarianDestination spawn = GetRandomDestination();
+        GameObject ped = Instantiate(AIPrefab[Random.Range(0, AIPrefab.Count - 1)], spawn.transform);
+        ped.transform.parent = pool;
+        NormalPedestarian norm = ped.GetComponent<NormalPedestarian>();
+        RegisterAI(norm);
+        norm.RegisterNPCProfile(NPCManager.Instance.GetRandomNPC());
+        norm.profile.isRoaming = true;
+        norm.isHavingDestination = true;
+        norm.SetDestination(GetRandomDestination());
+    }
+
+    public PedestarianDestination GetRandomDestination()
+    {
+        return PedestarianDestinations[UnityEngine.Random.Range(0, PedestarianDestinations.Count - 1)];
+    }
 }
