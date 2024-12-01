@@ -142,7 +142,7 @@ public class PathFollower : MonoBehaviour {
                 }
             }
 
-            int maxSpeed = UnityEngine.Random.Range(10, 15);
+            int maxSpeed = UnityEngine.Random.Range(4, 8);
             if (!endpoint && dist < 0.5f) {
                 waitingTime += Time.deltaTime;
                 tar = 0.1f;

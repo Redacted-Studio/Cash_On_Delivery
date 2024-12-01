@@ -3,16 +3,32 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class VehicleInventory : MonoBehaviour
 {
+    static VehicleInventory _instance;
     public int MaxInventory = 5;
     [SerializeField] private List<GameObject> Inventory;
     public Transform paketPossisiPegang;
     NgecekInventory Invs;
+    public GameObject inventoryPrefab;
+    public Transform invUIParent;
 
-    // Start is called before the first frame update
+    private void Awake()
+    {
+        _instance = this;
+    }
+
+    public static VehicleInventory Instance
+    {
+        get
+        {
+            return _instance;
+        }
+    }
+
     void Start()
     {
         paketPossisiPegang = GameObject.FindGameObjectWithTag("PegangPaket").transform;
@@ -31,44 +47,37 @@ public class VehicleInventory : MonoBehaviour
         {
             Debug.Log("Paket Masuk");
             Inventory.Add(other.gameObject);
-            InventorySyncronize();
-            other.gameObject.SetActive(false);
+            InventorySyncronize(other.gameObject);
         }
     }
 
-    public void InventorySyncronize()
+    public void InventorySyncronize(GameObject sther)
     {
-        for(int i = 0; i < Inventory.Count; i++)
+            BoxPaket paketQ = sther.GetComponent<BoxPaket>();
+            GameObject invent = Instantiate(inventoryPrefab, invUIParent);
+            InventoryContents ins = invent.GetComponent<InventoryContents>();
+            ins.BoxPaket = paketQ;
+            ins.GameObject = paketQ.gameObject;
+            ins.NamaPaket.text = paketQ.Quest.NamaPaket;
+            sther.gameObject.SetActive(false);
+        
+    }
+
+    
+    public void Ambil(InventoryContents content)
+    {
+        GameObject contents = content.GameObject;
+        contents.transform.position = paketPossisiPegang.position;
+        content.BoxPaket.Pegang();
+        contents.SetActive(true);
+        for (int i = 0; i < Inventory.Count; i++)
         {
-            BoxPaket paketQ = Inventory[i].GetComponent<BoxPaket>();
-            Invs.InventoryContent[i].UiText.text = paketQ.Quest.NamaPaket;
-            Invs.InventoryContent[i].UiText.gameObject.SetActive(true);
-            Invs.InventoryContent[i].button.gameObject.SetActive(true);
-            Invs.InventoryContent[i].diIsi = true;
+            if (Inventory[i] == contents.gameObject)
+            {
+                Inventory.RemoveAt(i);
+                Destroy(content.gameObject);
+            }
         }
-    }
-
-    public void AmbilBarang(int i)
-    {
-        Inventory[i].transform.position = paketPossisiPegang.transform.position;
-        Inventory[i].gameObject.SetActive(true);
-        Invs.InventoryContent[i].UiText.text = "";
-        Invs.InventoryContent[i].UiText.gameObject.SetActive(false);
-        Invs.InventoryContent[i].button.gameObject.SetActive(false);
-        Invs.InventoryContent[i].diIsi = false;
-        Inventory[i] = null;
-    }
-
-    public NgecekInventory setInvs(NgecekInventory q)
-    {
-        Invs = q;
-        for (int i = 0; i < q.InventoryContent.Count; i++)
-        {
-            Invs.InventoryContent[i].UiText.gameObject.SetActive(false);
-            Invs.InventoryContent[i].button.gameObject.SetActive(false);
-            Invs.InventoryContent[i].diIsi = false;
-        }
-        return q;
     }
 }
 

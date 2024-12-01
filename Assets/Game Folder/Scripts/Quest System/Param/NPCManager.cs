@@ -20,7 +20,7 @@ public class NPCManager : MonoBehaviour
     [SerializeField] NamaBelakang NamaBelakangGenPerempuan;
 
     [Header("Attribute")]
-    public List<NPC> NPCList;
+    public List<NPC> NPCList = new List<NPC>();
 
     public static NPCManager _Instance;
 
@@ -55,10 +55,9 @@ public class NPCManager : MonoBehaviour
     {
         for (int i = 0;i < BuildingManager.Instance.GetBuildingCount();i++)
         {
-            var randomizer = UnityEngine.Random.Range(0, 1);
-            var randomNumber = UnityEngine.Random.Range(1, 5);
-            if (randomizer == 1) GenerateNPC(Gender.Laki, randomNumber);
-            else GenerateNPC(Gender.Perempuan, randomNumber);
+            var randomNumber = UnityEngine.Random.Range(1, 3);
+            GenerateNPC(Gender.Laki, randomNumber);
+            GenerateNPC(Gender.Perempuan, randomNumber);
         }
     }
 
@@ -103,6 +102,7 @@ public class NPC
     public Gender Gender;
     public bool OwnBuilding;
     public bool isRoaming= false;
+    public bool MesenPaket = false;
     public Building Rumah;
     [TextArea] public string shortProfile; // For GPT Prompting
 

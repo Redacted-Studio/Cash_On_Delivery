@@ -41,14 +41,19 @@ public class TimeManager : MonoBehaviour
     void Update()
     {
         timer -= Time.deltaTime;
-
+        
         if (timer <= 0)
         {
             Minute++;
+            float generated = UnityEngine.Random.Range(0, 10);
             onMinuteChange?.Invoke();
+            if (1 > generated)
+                GenerateQuest();
+
+            NerimaQ();
+
             if (Minute >= 60)
             {
-                
                 Hour++;
                 onHourChange?.Invoke();
                 Minute = 0;
@@ -61,5 +66,24 @@ public class TimeManager : MonoBehaviour
     public int getMinute()
     {
         return Minute;
+    }
+
+    public void GenerateQuest()
+    {
+        if (QuestManager.Instance.quests.Count > 20) return;
+        float generated = UnityEngine.Random.Range(1,3);
+        for (int i = 0; i < generated; i++)
+        {
+            QuestManager.Instance.GenerateQuest();
+        }
+
+        
+
+    }
+
+    public void NerimaQ()
+    {
+        if (QuestManager.Instance.quests.Count == 0) return;
+        QuestManager.Instance.NerimaRandomQuest();
     }
 }

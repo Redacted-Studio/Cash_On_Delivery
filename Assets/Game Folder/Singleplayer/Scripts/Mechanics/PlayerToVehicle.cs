@@ -9,7 +9,8 @@ using VehiclePhysics.UI;
 public enum PlayerStateMovement { 
     WALK,
     CAR,
-    INVENTORY
+    INVENTORY,
+    PHONE
 }
 
 public class PlayerToVehicle : MonoBehaviour
@@ -19,7 +20,10 @@ public class PlayerToVehicle : MonoBehaviour
     [SerializeField] Transform CameraAnchorCar;
     [SerializeField] Transform GetOutCarPos;
 
+    public GameObject Hape;
+
     public PlayerStateMovement playerStates;
+    public PlayerStateMovement before;
 
     VPVehicleController vehcon;
     VPStandardInput vehicleController;
@@ -65,18 +69,23 @@ public class PlayerToVehicle : MonoBehaviour
         {
             case PlayerStateMovement.WALK:
                 {
+                    if (Input.GetKey(KeyCode.P))
+                    {
+                        BukaHP();
+                    }
                     superCharCont.enabled = true;
                     superCharCont.enableCameraControl = true;
                     MainCams.transform.position = CameraAnchorWalk.position;
                     superCharCont.EnambleCameraMovement = true;
                     superCharCont.enableMovementControl = true;
                     masukMobil = false;
+                    Cursor.lockState = CursorLockMode.Locked;
+                    Cursor.visible = false;
                     //MainCams.transform.rotation = CameraAnchorWalk.rotation;
                     break;
                 }
             case PlayerStateMovement.CAR:
                 {
-
                     //superCharCont.enabled = false;
                     if (Input.GetKey(KeyCode.LeftAlt))
                     {
@@ -91,6 +100,8 @@ public class PlayerToVehicle : MonoBehaviour
                     superCharCont.enableMovementControl = false;
                     gameObject.transform.position = GetOutCarPos.position;
                     MainCams.transform.position = CameraAnchorCar.position;
+                    Cursor.lockState = CursorLockMode.Locked;
+                    Cursor.visible = false;
                     //MainCams.transform.rotation = CameraAnchorCar.rotation;
                     key = VehicleBase.data.Get(Channel.Input, InputData.Key);
                     //Debug.Log(telemetryVeh.vehicle.localAcceleration.magnitude.ToString());
@@ -110,11 +121,41 @@ public class PlayerToVehicle : MonoBehaviour
                         invents.BukaInventory();
                     superCharCont.EnambleCameraMovement = false;
                     superCharCont.enableMovementControl = false;
+                    Cursor.lockState = CursorLockMode.Confined;
+                    Cursor.visible = true;
+                    break;
+                }
+            case PlayerStateMovement.PHONE:
+                {
+                    if (Input.GetKeyDown(KeyCode.Escape))
+                    {
+                        NutupHP();
+                    }
+                    Cursor.lockState = CursorLockMode.Confined;
+                    Cursor.visible = true;
+                    superCharCont.enabled = false;
+                    superCharCont.enableCameraControl = false;
+                    superCharCont.EnambleCameraMovement = false;
+                    superCharCont.enableMovementControl = false;
+                    masukMobil = false;
                     break;
                 }
         }
     }
 
+    protected void BukaHP()
+    {
+        if (Hape.activeInHierarchy == true) return;
+        before = playerStates;
+        playerStates = PlayerStateMovement.PHONE;
+        Hape.SetActive(true);
+    }
+
+    protected void NutupHP()
+    {
+        playerStates = before;
+        Hape.SetActive(false);
+    }
     protected void DisableVehicleInput()
     {
         if (vehicleController == null) return;
