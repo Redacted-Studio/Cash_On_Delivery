@@ -31,8 +31,6 @@ public class Building : MonoBehaviour
         BuildingManager.Instance.InsertBuilding(this);
     }
 
-
-
     protected void SetBuildingName()
     {
 

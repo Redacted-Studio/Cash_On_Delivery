@@ -64,7 +64,7 @@ public class PlayerToVehicle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        minimapCamera.transform.position = MainCams.transform.position + (Vector3.up * 50);
+        minimapCamera.transform.position = MainCams.transform.position + (Vector3.up * 600);
         switch (playerStates)
         {
             case PlayerStateMovement.WALK:
