@@ -26,12 +26,12 @@ public class Building : MonoBehaviour
 
     void Start()
     {
-        owner = NPCManager.Instance.GetHomelessNPC();
-        owner.OwnBuilding = true;
         Jalanan.RegisterBuildingRoad(this);
         SetBuildingName();
         BuildingManager.Instance.InsertBuilding(this);
     }
+
+
 
     protected void SetBuildingName()
     {
@@ -42,7 +42,13 @@ public class Building : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (owner == null)
+        {
+            owner = NPCManager.Instance.GetHomelessNPC();
+            owner.OwnBuilding = true;
+            owner.Rumah = this;
+        }
+
     }
 
     public Transform GetSpawnPoint()

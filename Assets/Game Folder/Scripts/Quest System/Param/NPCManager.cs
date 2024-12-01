@@ -84,12 +84,11 @@ public class NPCManager : MonoBehaviour
             }
         }
 
-        if (homeless.Count == 0)
+        if (homeless.Count < 1)
         {
             var randomizer = UnityEngine.Random.Range(0, 1);
             if (randomizer == 1) GenerateNPC(Gender.Laki, 5);
             else GenerateNPC(Gender.Perempuan, 5);
-            
         }
 
         return homeless[UnityEngine.Random.Range(0, homeless.Count - 1)];
@@ -104,6 +103,7 @@ public class NPC
     public Gender Gender;
     public bool OwnBuilding;
     public bool isRoaming= false;
+    public Building Rumah;
     [TextArea] public string shortProfile; // For GPT Prompting
 
     public NPC(string Namas, int Umurs, Gender gender)

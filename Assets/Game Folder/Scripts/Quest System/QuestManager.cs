@@ -67,6 +67,17 @@ public class QuestManager : MonoBehaviour
             }
         }
     }
+
+    public void NerimaQuest(int ID)
+    {
+        for (int i = 0; i < quests.Count; i++)
+        {
+            if (quests[i].QuestID == ID)
+            {
+                quests[i].Accepted = true;
+            }
+        }
+    }
     
 }
 

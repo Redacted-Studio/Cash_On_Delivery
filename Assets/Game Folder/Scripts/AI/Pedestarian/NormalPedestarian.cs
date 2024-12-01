@@ -73,32 +73,32 @@ public class NormalPedestarian : AIBase
             DestinationController();
         }
 
-        //AnimationHandler();
+            //AnimationHandler();
 
-        /*        if (agent.isOnOffMeshLink)
-                {
-                    OffMeshLinkData data = agent.currentOffMeshLinkData;
-                    modelAnimator.SetBool("isWalking", true);
-
-                    //calculate the final point of the link
-                    Vector3 endPos = data.endPos + Vector3.up * agent.baseOffset;
-
-                    //Move the agent to the end point
-                    agent.transform.position = Vector3.MoveTowards(agent.transform.position, endPos, agent.speed * Time.deltaTime);
-                    gameObject.transform.LookAt(Vector3.MoveTowards(agent.transform.position, endPos, agent.speed));
-
-                    //when the agent reach the end point you should tell it, and the agent will "exit" the link and work normally after that
-                    if (agent.transform.position == endPos)
+            /*        if (agent.isOnOffMeshLink)
                     {
-                        agent.CompleteOffMeshLink();
-                    }
-                } else
-                {
-                    AnimationHandler();
-                }*/
+                        OffMeshLinkData data = agent.currentOffMeshLinkData;
+                        modelAnimator.SetBool("isWalking", true);
 
-        //Debug.Log("Processing");
-    }
+                        //calculate the final point of the link
+                        Vector3 endPos = data.endPos + Vector3.up * agent.baseOffset;
+
+                        //Move the agent to the end point
+                        agent.transform.position = Vector3.MoveTowards(agent.transform.position, endPos, agent.speed * Time.deltaTime);
+                        gameObject.transform.LookAt(Vector3.MoveTowards(agent.transform.position, endPos, agent.speed));
+
+                        //when the agent reach the end point you should tell it, and the agent will "exit" the link and work normally after that
+                        if (agent.transform.position == endPos)
+                        {
+                            agent.CompleteOffMeshLink();
+                        }
+                    } else
+                    {
+                        AnimationHandler();
+                    }*/
+
+            //Debug.Log("Processing");
+        }
 
     protected float distanceChecker()
     {
@@ -212,4 +212,15 @@ public class NormalPedestarian : AIBase
     }
 
     #endregion
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision == null) return;
+
+        if (collision.gameObject.CompareTag("Pintu"))
+        {
+            AIBukaPintu buka = collision.gameObject.GetComponent<AIBukaPintu>();
+            buka.BukaPintu();
+        }
+    }
 }
