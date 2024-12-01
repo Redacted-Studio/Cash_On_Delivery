@@ -101,6 +101,7 @@ GameObject:
   - component: {fileID: 7499695588041807379}
   - component: {fileID: 4632201297078053118}
   - component: {fileID: 4793435169775718126}
+  - component: {fileID: 6053713060512082213}
   m_Layer: 0
   m_Name: Ruko1
   m_TagString: Untagged
@@ -173,6 +174,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &6053713060512082213
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4935813885528937100}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 5425033119156374888, guid: ea8746b0269dfcd46bb14f456a85ac57, type: 3}
 --- !u!1 &6165238128212081671
 GameObject:
   m_ObjectHideFlags: 0
@@ -184,6 +207,7 @@ GameObject:
   - component: {fileID: 5999690499860939239}
   - component: {fileID: 7008822966200445233}
   - component: {fileID: 3676905801974473126}
+  - component: {fileID: 916730460941952778}
   - component: {fileID: 4599000756733005393}
   m_Layer: 0
   m_Name: PintuRuko1
@@ -257,6 +281,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &916730460941952778
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6165238128212081671}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2711209094396468249, guid: ea8746b0269dfcd46bb14f456a85ac57, type: 3}
 --- !u!95 &4599000756733005393
 Animator:
   serializedVersion: 5

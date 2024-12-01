@@ -70,6 +70,7 @@ GameObject:
   - component: {fileID: 3073966563748284210}
   - component: {fileID: 5687792436431673581}
   - component: {fileID: 2057731689297313829}
+  - component: {fileID: 804394608408749795}
   - component: {fileID: 2835517895030916400}
   m_Layer: 0
   m_Name: PintuRuko2
@@ -143,6 +144,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &804394608408749795
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1822157678830522644}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 5086310333170684979, guid: ea8746b0269dfcd46bb14f456a85ac57, type: 3}
 --- !u!95 &2835517895030916400
 Animator:
   serializedVersion: 5
@@ -175,6 +198,7 @@ GameObject:
   - component: {fileID: 5676511094877980054}
   - component: {fileID: 8391922378418891102}
   - component: {fileID: 3087445179573831536}
+  - component: {fileID: 2740934239406138135}
   m_Layer: 0
   m_Name: Ruko2
   m_TagString: Untagged
@@ -247,6 +271,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &2740934239406138135
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1850983248539274782}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 722718818665481141, guid: ea8746b0269dfcd46bb14f456a85ac57, type: 3}
 --- !u!1 &8295193622734797562
 GameObject:
   m_ObjectHideFlags: 0
