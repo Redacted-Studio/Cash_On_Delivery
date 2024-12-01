@@ -141,6 +141,10 @@ public class PlayerToVehicle : MonoBehaviour
                     break;
                 }
         }
+
+        //superCharCont.currentSurvivalStats.Hunger
+        //superCharCont.currentSurvivalStats.Hydration
+        //superCharCont.Stamina
     }
 
     protected void BukaHP()

@@ -388,16 +388,16 @@ public class Junction : MonoBehaviour {
                 streetWays[0] = StreetWays(0);
                 streetWays[2] = StreetWays(2);
             } else {//faza I1
-                //streetWays[0] = StreetWays(0, true);
-                //streetWays[2] = StreetWays(2, true);
+                streetWays[0] = StreetWays(0, true);
+                streetWays[2] = StreetWays(2, true);
             }
             if (joints[1].input.Count > 1 && joints[3].input.Count > 1 && joints[0].output.Count > 0 && joints[2].output.Count > 0) {
                 mode += 2;//faza II2
                 streetWays[1] = StreetWays(1);
                 streetWays[3] = StreetWays(3);
             } else {//faza I2
-                //streetWays[1] = StreetWays(1, true);
-                //streetWays[3] = StreetWays(3, true);
+                streetWays[1] = StreetWays(1, true);
+                streetWays[3] = StreetWays(3, true);
             }
             Dictionary<int, string> dict = new Dictionary<int, string>();
             int c = 0;

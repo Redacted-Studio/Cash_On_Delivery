@@ -42,10 +42,10 @@ public class Building : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("PUNYA " + owner.Nama);
+        //Debug.Log("PUNYA " + owner.Nama);
         if (owner.OwnBuilding == false)
         {
-            Debug.Log("TANPA PEMILIK");
+            //Debug.Log("TANPA PEMILIK");
             owner = NPCManager.Instance.GetHomelessNPC();
             owner.OwnBuilding = true;
             owner.Rumah = this;

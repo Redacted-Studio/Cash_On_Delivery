@@ -43,6 +43,7 @@ public class QuestManager : MonoBehaviour
     {
         Building tempat = BuildingManager.Instance.GetRandomBuilding();
         if (tempat.GetOwner().MesenPaket == true) return;
+        float distance = Vector2.Distance(SpawnPlace.position, tempat.transform.position);
         Quest paket = new Quest();
         paket.QuestID = quests.Count + 1;
         paket.Alamat = tempat.GetAlamat();
@@ -50,6 +51,8 @@ public class QuestManager : MonoBehaviour
         paket.Position = tempat.tempatNerimaPaket;
         paket.NomorTempat = tempat.GetBuildingNumber();
         paket.NamaPaket = "Paket " + tempat.GetOwner().Nama;
+        float randTar = UnityEngine.Random.Range(50f, 150f);
+        paket.Tariff = distance * randTar;
         tempat.GetOwner().MesenPaket = true;
         quests.Add(paket);
         GameObject Invoice = Instantiate(Papers[UnityEngine.Random.Range(0, Papers.Count - 1)], SpawnPlace.position, Quaternion.identity);
@@ -120,5 +123,6 @@ public class Quest
     public string Penerima;
     public bool isFragile = false;
     public bool Accepted;
+    public float Tariff;
     public Transform Position;
 }

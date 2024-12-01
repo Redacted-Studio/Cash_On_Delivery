@@ -24,7 +24,7 @@ public class AIBukaPintu : MonoBehaviour
         while (i < hitColliders.Length)
         {
             BukaPintu();
-            Debug.Log("Hit : " + hitColliders[i].name + i);
+            //Debug.Log("Hit : " + hitColliders[i].name + i);
             i++;
         }
 
