@@ -98,16 +98,17 @@ public class QuestManager : MonoBehaviour
     public void NerimaQuest(int ID)
     {
         Quest questss = null;
-
+        bool sudahNerima = false;
         for (int i = 0; i < quests.Count; i++)
         {
             if (quests[i].QuestID == ID)
             {
-                if (quests[i].Accepted == true) return;
+                if (quests[i].Accepted == true) sudahNerima = true;
                 questss = quests[i];                
             }
         }
 
+        if (sudahNerima) return;
         questss.Accepted = true;
         GameObject ist = Instantiate(HPUIPref, parentUIHP);
         OrderanUI uis = ist.GetComponent<OrderanUI>();

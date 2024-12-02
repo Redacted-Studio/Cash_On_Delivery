@@ -33,6 +33,14 @@ public class EconomyManager : MonoBehaviour
         PlayerMoney -= Harga;
     }
 
+    public bool CanBeliBarang(float val)
+    {
+        if (PlayerMoney < val)
+        {
+            return false;
+        } else return true;
+    }
+
     public void DapatUang(float Jumlah)
     {
         PlayerMoney += Jumlah;

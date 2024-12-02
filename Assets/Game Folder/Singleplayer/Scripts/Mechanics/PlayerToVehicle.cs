@@ -16,12 +16,14 @@ public enum PlayerStateMovement {
 
 public class PlayerToVehicle : MonoBehaviour
 {
+    static PlayerToVehicle _instance;
     [SerializeField] GameObject Vehicle;
     [SerializeField] Transform CameraAnchorWalk;
     [SerializeField] Transform CameraAnchorCar;
     [SerializeField] Transform GetOutCarPos;
 
     public GameObject Hape;
+    public GameObject BahariUI;
 
     public PlayerStateMovement playerStates;
     public PlayerStateMovement before;
@@ -43,6 +45,24 @@ public class PlayerToVehicle : MonoBehaviour
 
     // Camera Handler
     [SerializeField] Camera MainCams;
+
+    private void Awake()
+    {
+        _instance = this;
+    }
+
+    public static PlayerToVehicle Instance
+    {
+        get
+        {
+            return _instance;
+        }
+    }
+
+    public void Makan(float val)
+    {
+        superCharCont.currentSurvivalStats.Hunger += val;
+    }
 
     void Start()
     {
@@ -141,6 +161,21 @@ public class PlayerToVehicle : MonoBehaviour
                     masukMobil = false;
                     break;
                 }
+            case PlayerStateMovement.BELANJA:
+                {
+                    if (Input.GetKeyDown(KeyCode.Escape))
+                    {
+                        KeluarBelanja();
+                    }
+                    Cursor.lockState = CursorLockMode.Confined;
+                    Cursor.visible = true;
+                    superCharCont.enabled = false;
+                    superCharCont.enableCameraControl = false;
+                    superCharCont.EnambleCameraMovement = false;
+                    superCharCont.enableMovementControl = false;
+                    masukMobil = false;
+                    break;
+                }
         }
 
         //superCharCont.currentSurvivalStats.Hunger
@@ -161,6 +196,13 @@ public class PlayerToVehicle : MonoBehaviour
         playerStates = before;
         Hape.SetActive(false);
     }
+
+    protected void KeluarBelanja()
+    {
+        playerStates = PlayerStateMovement.WALK;
+        BahariUI.SetActive(false);
+    }
+
     protected void DisableVehicleInput()
     {
         if (vehicleController == null) return;

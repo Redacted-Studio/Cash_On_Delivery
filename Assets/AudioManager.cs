@@ -7,6 +7,7 @@ public class AudioManager : MonoBehaviour
     static AudioManager _instance;
 
     AudioSource audioSource;
+    [SerializeField] AudioSource audioSourceSFX;
     [SerializeField] Audios[] audios;
     [SerializeField] Radio[] BGM;
     [SerializeField] int currClip;
@@ -36,7 +37,7 @@ public class AudioManager : MonoBehaviour
         {
             if(audio.AudioName == soundName)
             {
-                audioSource.PlayOneShot(audio.audioClip);
+                audioSourceSFX.PlayOneShot(audio.audioClip);
             }
         }
     }
