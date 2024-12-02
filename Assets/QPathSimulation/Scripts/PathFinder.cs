@@ -183,7 +183,7 @@ public class PathFinder : MonoBehaviour {
             path.Last().street.spawns[4]--;
         }
         Street str = path.First().street;
-        PathFollower follower = SpawnCarCustom(str.GetRandomSpawnPoint());
+        PathFollower follower = SpawnCarCustom();
         if (returnNodePath != null && returnNodePath.Count != 0) {
             List<Path> returnPath = NodesToPath(returnNodePath);
             follower.Follow(path, targetType, targetType == 2 ? shopingDelay : workDelay, returnPath);
@@ -226,7 +226,7 @@ public class PathFinder : MonoBehaviour {
             return;
         }
         Street s = paths.First().street;
-        PathFollower follower = SpawnCarCustom(s.GetRandomSpawnPoint());
+        PathFollower follower = SpawnCarCustom();
         follower.Follow(paths);
     }
     /// <summary>

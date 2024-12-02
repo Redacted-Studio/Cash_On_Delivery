@@ -51,15 +51,14 @@ public class TimeManager : MonoBehaviour
                 GenerateQuest();
 
             NerimaQ();
-
-            if (Minute >= 60)
-            {
-                Hour++;
-                onHourChange?.Invoke();
-                Minute = 0;
-            }
-
             timer = minuteToRT;
+        }
+
+        if (Minute >= 60)
+        {
+            Hour++;
+            onHourChange?.Invoke();
+            Minute = 0;
         }
     }
 

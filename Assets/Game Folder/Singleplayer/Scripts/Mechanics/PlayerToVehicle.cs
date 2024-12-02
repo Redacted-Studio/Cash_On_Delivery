@@ -10,7 +10,8 @@ public enum PlayerStateMovement {
     WALK,
     CAR,
     INVENTORY,
-    PHONE
+    PHONE,
+    BELANJA
 }
 
 public class PlayerToVehicle : MonoBehaviour

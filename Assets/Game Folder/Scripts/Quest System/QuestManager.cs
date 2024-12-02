@@ -11,10 +11,16 @@ public class QuestManager : MonoBehaviour
     public GameObject QuestPool;
     public Transform ObjectPool;
     public int FinishedQuest;
-    public Transform parentUIHP;
-    public GameObject HPUIPref;
 
+    [Header("Transform Parent")]
+    public Transform parentUIHP;
+    public Transform NotifUIParent;
     public Transform SpawnPlace;
+
+    [Header("Prefab")]
+    public GameObject HPUIPref;
+    public GameObject WaypointPrefab;
+    public GameObject NotificiationPrefab;
 
     [Header("QUESTING LIST")]
     public List<Quest> quests;
@@ -71,6 +77,9 @@ public class QuestManager : MonoBehaviour
         {
             if (quests[i].QuestID == ID)
             {
+                Destroy(quests[i].Waypoints);
+                ShowNotification("Penghasilan", string.Format("{0:n}", quests[i].Tariff));
+                EconomyManager.Instance.DapatUang(quests[i].Tariff);
                 quests.RemoveAt(i);
                 FinishedQuest++;
                 textMeshProUGUI.text = "Quest Available : " + quests.Count;
@@ -103,6 +112,9 @@ public class QuestManager : MonoBehaviour
         GameObject ist = Instantiate(HPUIPref, parentUIHP);
         OrderanUI uis = ist.GetComponent<OrderanUI>();
         uis.SetUI(questss.Penerima, questss.Alamat + " No." + questss.NomorTempat.ToString(), ID);
+        ShowNotification("Orderan Baru", "Orderan " + questss.NamaPaket);
+        GameObject wp = Instantiate(WaypointPrefab, questss.Position);
+        questss.Waypoints = wp;
     }
 
     public void NerimaRandomQuest()
@@ -110,7 +122,15 @@ public class QuestManager : MonoBehaviour
         int range = UnityEngine.Random.Range(1, quests.Count + 1);
         NerimaQuest(range);
     }
-    
+
+    public void ShowNotification(string h, string i)
+    {
+        GameObject noti = Instantiate(NotificiationPrefab, NotifUIParent);
+        Notif notifs = noti.GetComponent<Notif>();
+        notifs.SetNotif(h,i);
+        AudioManager.Instance.PlaySoundSFX("Notification Sound");
+    }
+
 }
 
 [Serializable]
@@ -125,4 +145,5 @@ public class Quest
     public bool Accepted;
     public float Tariff;
     public Transform Position;
+    public GameObject Waypoints;
 }

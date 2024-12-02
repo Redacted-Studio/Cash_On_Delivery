@@ -53,7 +53,7 @@ public class ModifierCarAI : MonoBehaviour
     }
     public bool TurnOnLight()
     {
-        return TimeManager.Hour < 7 || TimeManager.Hour < 18;
+        return TimeManager.Hour < 6 || TimeManager.Hour > 18;
     }
 
     public bool IsAnythingInFront()

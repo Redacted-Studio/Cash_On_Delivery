@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7515969336058239636}
   - component: {fileID: 8144984686428737821}
   - component: {fileID: 1112505535585500387}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: AIBukaPintu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.274, y: 1.179, z: -0.219}
-  m_LocalScale: {x: 2.7638, y: 2.0656207, z: 2.1711}
+  m_LocalScale: {x: 1.3346666, y: 2.0656207, z: 2.1711}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 9013666709527457562}
@@ -132,7 +132,7 @@ GameObject:
   m_Component:
   - component: {fileID: 634952778180915711}
   - component: {fileID: 2931143782242423230}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: PedestarianDest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -183,7 +183,7 @@ GameObject:
   - component: {fileID: 8532110172419712341}
   - component: {fileID: 4343159562756916270}
   - component: {fileID: 5444597498306618618}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Ruko1.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -310,7 +310,7 @@ GameObject:
   - component: {fileID: 913881364896717821}
   - component: {fileID: 4479727586944562263}
   - component: {fileID: 873509266488126721}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: PintuRuko3.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -451,7 +451,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9013666709527457562}
   - component: {fileID: 6055534704628563709}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: tesRuko2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -499,6 +499,7 @@ MonoBehaviour:
     Gender: 0
     OwnBuilding: 0
     isRoaming: 0
+    MesenPaket: 0
     Rumah: {fileID: 0}
     shortProfile: 
   tempatNerimaPaket: {fileID: 235528588121126697}
@@ -513,7 +514,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 235528588121126697}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: TempatNerimaPaket
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -529,7 +530,7 @@ Transform:
   m_GameObject: {fileID: 8472537099853971321}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -6.91, y: 0, z: 1.15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -548,7 +549,7 @@ GameObject:
   - component: {fileID: 330673259578355182}
   - component: {fileID: 7980365195514365364}
   - component: {fileID: 2481145187014040024}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Ruko1.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
