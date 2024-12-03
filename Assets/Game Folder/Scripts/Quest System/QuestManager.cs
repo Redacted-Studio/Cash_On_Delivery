@@ -116,6 +116,7 @@ public class QuestManager : MonoBehaviour
         ShowNotification("Orderan Baru", "Orderan " + questss.NamaPaket);
         GameObject wp = Instantiate(WaypointPrefab, questss.Position);
         questss.Waypoints = wp;
+        wp.SetActive(false);
     }
 
     public void NerimaRandomQuest()

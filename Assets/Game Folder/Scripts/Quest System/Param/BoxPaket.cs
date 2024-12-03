@@ -32,7 +32,16 @@ public class BoxPaket : MonoBehaviour
             CekTempat();
         }
 
-        
+        ShowWp();
+    }
+
+    protected void ShowWp()
+    {
+        float dist = Vector3.Distance(transform.position, Quest.Position.position);
+        if (dist < 12)
+        {
+            Quest.Waypoints.SetActive(true);
+        } else Quest.Waypoints.SetActive(false);
     }
 
     protected void CekTempat()

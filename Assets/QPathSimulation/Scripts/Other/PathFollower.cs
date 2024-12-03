@@ -151,7 +151,7 @@ public class PathFollower : MonoBehaviour {
                 tar = tar > 3 ? maxSpeed/2 : tar;
             }
             if (dist >= 0.4f) {
-                tar = angle < maxSpeed ? maxSpeed : maxSpeed / (angle / 3);
+                tar = angle < maxSpeed ? maxSpeed : (angle / maxSpeed);
             }
             target = path[index].PosOfB + dir * back;
             yield return new WaitForFixedUpdate();

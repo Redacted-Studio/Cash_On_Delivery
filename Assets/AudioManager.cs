@@ -6,7 +6,7 @@ public class AudioManager : MonoBehaviour
 {
     static AudioManager _instance;
 
-    AudioSource audioSource;
+    [SerializeField] AudioSource audioSourceRadio;
     [SerializeField] AudioSource audioSourceSFX;
     [SerializeField] Audios[] audios;
     [SerializeField] Radio[] BGM;
@@ -44,13 +44,13 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        audioSource = GetComponent<AudioSource>();
+        audioSourceRadio = GetComponent<AudioSource>();
         
     }
 
     private void Update()
     {
-        if (!audioSource.isPlaying)
+        if (!audioSourceRadio.isPlaying)
         {
             Debug.Log("Ganti Lagu");
             currClip++;
@@ -68,8 +68,8 @@ public class AudioManager : MonoBehaviour
             }
 
             if (currClip > prad.Count - 1) currClip = 0;
-            audioSource.clip = prad[currClip].audioClip;
-            audioSource.Play();
+            audioSourceRadio.clip = prad[currClip].audioClip;
+            audioSourceRadio.Play();
         }
     }
 
@@ -78,7 +78,7 @@ public class AudioManager : MonoBehaviour
         CurrentRadio = ch;
         for (int i = 0; i < BGM.Length - 1; i++)
         {
-            if (audioSource.clip == BGM[i].audioClip)
+            if (audioSourceRadio.clip == BGM[i].audioClip)
             {
                 if (BGM[i].RadioFreq == ch) return;
 
@@ -96,8 +96,8 @@ public class AudioManager : MonoBehaviour
                 }
 
                 if (currClip > prad.Count - 1) currClip = 0;
-                audioSource.clip = prad[currClip].audioClip;
-                audioSource.Play();
+                audioSourceRadio.clip = prad[currClip].audioClip;
+                audioSourceRadio.Play();
             }
         }
     }
