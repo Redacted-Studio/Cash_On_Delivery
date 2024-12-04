@@ -64,6 +64,11 @@ public class PlayerToVehicle : MonoBehaviour
         superCharCont.currentSurvivalStats.Hunger += val;
     }
 
+    public void Minum(float val)
+    {
+        superCharCont.currentSurvivalStats.Hydration += val;
+    }
+
     void Start()
     {
         Debug.Log("Vehicle Component " + Vehicle.GetComponentCount());

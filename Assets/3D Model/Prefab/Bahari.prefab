@@ -225,7 +225,6 @@ GameObject:
   - component: {fileID: 9086136519429573465}
   - component: {fileID: 2275345920644039266}
   - component: {fileID: 14237055495082202}
-  - component: {fileID: 5316496504193333871}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -334,7 +333,7 @@ MonoBehaviour:
   OnInteract:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5316496504193333871}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Bahari, Assembly-CSharp
         m_MethodName: BukaShop
         m_Mode: 1
@@ -346,32 +345,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &5316496504193333871
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5143355588212223104}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6dcace4e26622348aadf591fe6e371e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BahariUI: {fileID: 0}
-  ItemType:
-  - namaItem: Indomie
-    type: 0
-    Harga: 5000
-    Value: 5
-  - namaItem: Lontong Sayur
-    type: 0
-    Harga: 12000
-    Value: 8
-  - namaItem: Kontol
-    type: 0
-    Harga: 150000
-    Value: 15
 --- !u!1 &5997425261596922418
 GameObject:
   m_ObjectHideFlags: 0

@@ -42,12 +42,6 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        audioSourceRadio = GetComponent<AudioSource>();
-        
-    }
-
     private void Update()
     {
         if (!audioSourceRadio.isPlaying)
