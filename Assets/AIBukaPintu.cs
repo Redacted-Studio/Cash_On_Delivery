@@ -27,9 +27,10 @@ public class AIBukaPintu : MonoBehaviour
             //Debug.Log("Hit : " + hitColliders[i].name + i);
             i++;
         }
-
-        if(hitColliders.Length < 1)
-            animator.SetBool("Terbukalah", false);
-
+        if(animator)
+        {
+            if (hitColliders.Length < 1)
+                animator.SetBool("Terbukalah", false);
+        }
     }
 }

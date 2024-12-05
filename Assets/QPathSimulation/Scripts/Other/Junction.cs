@@ -214,8 +214,12 @@ public class Junction : MonoBehaviour {
                 }
                 foreach (int i in phases[phase].routes) {
                     paths[i].block = BlockType.Open;
-                    if (TL[phase] != null)
-                        TL[phase].BolehJalan();
+                    if (TL.Length > 0)
+                    {
+                        if (TL[phase] != null)
+                            TL[phase].BolehJalan();
+                    }
+
                 }
                 if (globalTimersCalc && timersCalc && phase == phases.Length - 1) {
                     float allTime = 0;
@@ -237,8 +241,11 @@ public class Junction : MonoBehaviour {
                 timeToPhase = 0;
                 foreach (Path p in paths) {
                     p.block = BlockType.Blocked;//blocked
-                    if (TL[phase] != null)
-                        TL[phase].GaBolehJalan();
+                    if(TL.Length > 0)
+                    {
+                        if (TL[phase] != null)
+                            TL[phase].GaBolehJalan();
+                    }
                 }
             }
             phase = (phase + 1) % phases.Length;
