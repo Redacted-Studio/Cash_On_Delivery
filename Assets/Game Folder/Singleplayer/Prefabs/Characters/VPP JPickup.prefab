@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2578495999753699964}
   - component: {fileID: 4461023549883131767}
   - component: {fileID: 2234369365269161127}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Grill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 1425696869970352316}
   - component: {fileID: 7186558875461724975}
   - component: {fileID: 8825969320877293150}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: RRLightGlass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -179,7 +179,7 @@ GameObject:
   - component: {fileID: 783026065742370030}
   - component: {fileID: 2705701485458396633}
   - component: {fileID: 51539497796545402}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Hood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -263,7 +263,7 @@ GameObject:
   - component: {fileID: 1899623992609802759}
   - component: {fileID: 4667143411699580086}
   - component: {fileID: 7964559275368964755}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: TopBrakeLightGlass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -346,7 +346,7 @@ GameObject:
   - component: {fileID: 5839015263150760568}
   - component: {fileID: 5170405956941735650}
   - component: {fileID: 8882067525861564649}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: InteriorGaugesOff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -429,7 +429,7 @@ GameObject:
   - component: {fileID: 7433862064469825857}
   - component: {fileID: 6647563366554080716}
   - component: {fileID: 7589708198138142942}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: RFogLightGlass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -512,7 +512,7 @@ GameObject:
   - component: {fileID: 529701983569391146}
   - component: {fileID: 6675001601863535862}
   - component: {fileID: 1343724557481261661}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: StarterKey
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -626,7 +626,7 @@ GameObject:
   - component: {fileID: 3170301313565768010}
   - component: {fileID: 1706489426583733781}
   - component: {fileID: 5095715715743788804}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: LFDoorInt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -710,7 +710,7 @@ GameObject:
   - component: {fileID: 97883271622927692}
   - component: {fileID: 412451125885902283}
   - component: {fileID: 4766373451808764331}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: SatNavOn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -793,7 +793,7 @@ GameObject:
   - component: {fileID: 4582655195560987247}
   - component: {fileID: 6165166947319037365}
   - component: {fileID: 7704391750315344378}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: HeadlightOn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1116,7 +1116,7 @@ GameObject:
   - component: {fileID: 2304328042574569044}
   - component: {fileID: 3978680352276873340}
   - component: {fileID: 1984600787678496957}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: RPLate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1199,7 +1199,7 @@ GameObject:
   - component: {fileID: 2651971508940304201}
   - component: {fileID: 1642454000587478468}
   - component: {fileID: 7636757150215778811}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: FFender
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1468,7 +1468,7 @@ GameObject:
   - component: {fileID: 7333060681820587619}
   - component: {fileID: 1597374263446586581}
   - component: {fileID: 3281136977093674174}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: LFDoorGlass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1610,7 +1610,7 @@ GameObject:
   - component: {fileID: 7176228631604164212}
   - component: {fileID: 4179995048352158465}
   - component: {fileID: 5228526174245112041}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: LRReverseGlow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1693,7 +1693,7 @@ GameObject:
   - component: {fileID: 1021519143048062771}
   - component: {fileID: 2299070557297393965}
   - component: {fileID: 5683255658354758079}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: JP_Tire_RR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1808,7 +1808,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1815692328075926722}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Wheel_FR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1844,7 +1844,7 @@ GameObject:
   - component: {fileID: 3162419145248571778}
   - component: {fileID: 7954460144360556949}
   - component: {fileID: 7392439919171327537}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: FRDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1920,6 +1920,130 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &2086810601196063872
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3054669903831827579}
+  - component: {fileID: 7568295344306771624}
+  - component: {fileID: 7510218904362329069}
+  - component: {fileID: 3262176006850154589}
+  - component: {fileID: 5099666541261396813}
+  m_Layer: 6
+  m_Name: TempatNyetorInventory
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3054669903831827579
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2086810601196063872}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.928, z: -2.74}
+  m_LocalScale: {x: 1.5899, y: 1.2377, z: 0.57613134}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 10942947678159886}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &7568295344306771624
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2086810601196063872}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &7510218904362329069
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2086810601196063872}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &3262176006850154589
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2086810601196063872}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 512
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 503
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5099666541261396813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2086810601196063872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9393b7be63aa9c4ba7d15cdca523741, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxInventory: 5
+  Inventory: []
+  paketPossisiPegang: {fileID: 0}
+  inventoryPrefab: {fileID: 8668407825796540142, guid: e70a555fe10ae3d4093c7d4fc532590f,
+    type: 3}
+  invUIParent: {fileID: 0}
 --- !u!1 &2094700163683518251
 GameObject:
   m_ObjectHideFlags: 0
@@ -1931,7 +2055,7 @@ GameObject:
   - component: {fileID: 2986617815022311404}
   - component: {fileID: 3149619300716027411}
   - component: {fileID: 3558719613094498325}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: FRMirror
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1946,13 +2070,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2094700163683518251}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0.043619405, y: 0, z: 0, w: 0.9990483}
   m_LocalPosition: {x: 0.0013067722, y: 0.23106533, z: -0.24698532}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3162419145248571778}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 5, y: 0, z: 0}
 --- !u!33 &3149619300716027411
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -2063,7 +2187,7 @@ GameObject:
   - component: {fileID: 2199464933666393161}
   - component: {fileID: 25812061890445423}
   - component: {fileID: 6143795095480505523}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: RFDoorGlass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2146,7 +2270,7 @@ GameObject:
   - component: {fileID: 4476819571444832385}
   - component: {fileID: 6372961679712245098}
   - component: {fileID: 7361582891008294070}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: RRBrakeGlow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2229,7 +2353,7 @@ GameObject:
   - component: {fileID: 1829066688293322034}
   - component: {fileID: 5993838012276349774}
   - component: {fileID: 5957936786237136954}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: LFIndicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2341,7 +2465,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1999575457115765285}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Wheel_RL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2377,7 +2501,7 @@ GameObject:
   - component: {fileID: 4876366706296476718}
   - component: {fileID: 3763858456228916157}
   - component: {fileID: 6737333080033106328}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: RRReverseGlow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2460,7 +2584,7 @@ GameObject:
   - component: {fileID: 8058194159897602091}
   - component: {fileID: 2727029103275733409}
   - component: {fileID: 3195825163534003229}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Suspension_LR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2543,7 +2667,7 @@ GameObject:
   - component: {fileID: 7444479111961915166}
   - component: {fileID: 5115610925845716967}
   - component: {fileID: 7728720455733349095}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: RHeadLightGlass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2626,7 +2750,7 @@ GameObject:
   - component: {fileID: 7681917660339788755}
   - component: {fileID: 4764736209811912619}
   - component: {fileID: 2688906699961313759}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: RFender
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2712,7 +2836,7 @@ GameObject:
   - component: {fileID: 8871617156573065910}
   - component: {fileID: 1221111080041817608}
   - component: {fileID: 3764474176490210466}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: SatNavOff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2795,7 +2919,7 @@ GameObject:
   - component: {fileID: 4902061684401090006}
   - component: {fileID: 2928694836273670374}
   - component: {fileID: 3682422924569688715}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: HandBrakeLightOn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2878,7 +3002,7 @@ GameObject:
   - component: {fileID: 6058288916863418820}
   - component: {fileID: 313074472966204992}
   - component: {fileID: 4887624138381764445}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: RRDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2964,7 +3088,7 @@ GameObject:
   - component: {fileID: 6072687121678235147}
   - component: {fileID: 2644354348169795578}
   - component: {fileID: 1039054400877711760}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: JP_Tire_RL_Blur
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3175,7 +3299,7 @@ GameObject:
   - component: {fileID: 8303162871395972689}
   - component: {fileID: 3630670889212990750}
   - component: {fileID: 2517125832280550633}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: FLMirror
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3190,13 +3314,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3510242428213298025}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0.043619405, y: 0, z: 0, w: 0.9990483}
   m_LocalPosition: {x: -0.001752913, y: 0.23106545, z: -0.24699533}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 9076050521220671148}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 5, y: 0, z: 0}
 --- !u!33 &3630670889212990750
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -3259,7 +3383,7 @@ GameObject:
   - component: {fileID: 9076050521220671148}
   - component: {fileID: 1280224321060341812}
   - component: {fileID: 7524758101084908039}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: FLDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3346,7 +3470,7 @@ GameObject:
   - component: {fileID: 1975972512488498155}
   - component: {fileID: 9014967697328305507}
   - component: {fileID: 525859403626090030}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: RearWindowGlass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3427,7 +3551,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 436334028793048484}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Wheel_RR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3463,7 +3587,7 @@ GameObject:
   - component: {fileID: 1826239169933410552}
   - component: {fileID: 170205041972938398}
   - component: {fileID: 2346469609767456647}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: WarningLightsOff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3546,7 +3670,7 @@ GameObject:
   - component: {fileID: 9140617537339583754}
   - component: {fileID: 4356959758869841895}
   - component: {fileID: 4110337178952654709}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: HeadlightOff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3629,7 +3753,7 @@ GameObject:
   - component: {fileID: 2422825625048525804}
   - component: {fileID: 1666037768833906423}
   - component: {fileID: 5485631472794621665}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: JP_Brake_FR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3712,7 +3836,7 @@ GameObject:
   - component: {fileID: 2388826766112293442}
   - component: {fileID: 5637206115092398146}
   - component: {fileID: 4036685852364154549}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: RFIndicatorGlow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3795,7 +3919,7 @@ GameObject:
   - component: {fileID: 8317002261004948268}
   - component: {fileID: 7064558614907256468}
   - component: {fileID: 6653212906982491702}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: FuelOff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3878,7 +4002,7 @@ GameObject:
   - component: {fileID: 505902020536034538}
   - component: {fileID: 1267332002176315686}
   - component: {fileID: 7423427173452604176}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: JPickupChassis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3969,7 +4093,7 @@ GameObject:
   - component: {fileID: 4682214871869737491}
   - component: {fileID: 8591304743733671875}
   - component: {fileID: 6574597775305242865}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: JP_Tire_FR_Blur
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4041,6 +4165,156 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &4111377817309866707
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7583847483515456899}
+  - component: {fileID: 4074784961613501669}
+  - component: {fileID: 5572260815740774476}
+  - component: {fileID: 721798577100246754}
+  - component: {fileID: 2549067183280856049}
+  - component: {fileID: 2890378044111577659}
+  m_Layer: 6
+  m_Name: TempatNgecekInventory
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7583847483515456899
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4111377817309866707}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: 0.928, z: -1.617}
+  m_LocalScale: {x: 2.0152097, y: 1.4014478, z: 2.2665231}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 10942947678159886}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &4074784961613501669
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4111377817309866707}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &5572260815740774476
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4111377817309866707}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &721798577100246754
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4111377817309866707}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 960
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2549067183280856049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4111377817309866707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44d6f2afb1869e24bb9f3efec81da8ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnInteract:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2890378044111577659}
+        m_TargetAssemblyTypeName: NgecekInventory, Assembly-CSharp
+        m_MethodName: BukaInventory
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2890378044111577659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4111377817309866707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66e820ed2955c7440a0a43357ca612f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UISet: {fileID: 0}
+  contentPreset: {fileID: 8668407825796540142, guid: e70a555fe10ae3d4093c7d4fc532590f,
+    type: 3}
+  playerRef: {fileID: 0}
 --- !u!1 &4112689026066287566
 GameObject:
   m_ObjectHideFlags: 0
@@ -4052,7 +4326,7 @@ GameObject:
   - component: {fileID: 8819135554931924884}
   - component: {fileID: 1812840129469145838}
   - component: {fileID: 5475191557984497634}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: TemperatureOff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4140,6 +4414,7 @@ GameObject:
   - component: {fileID: 9221842231473686830}
   - component: {fileID: 7031227488486547699}
   - component: {fileID: 8748002255922718088}
+  - component: {fileID: 9165977557067410195}
   m_Layer: 6
   m_Name: VPP JPickup
   m_TagString: Car
@@ -4170,6 +4445,9 @@ Transform:
   - {fileID: 1740115768628128709}
   - {fileID: 4505449737140521286}
   - {fileID: 8421729695723942215}
+  - {fileID: 3054669903831827579}
+  - {fileID: 7583847483515456899}
+  - {fileID: 8917593140747917519}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &8162482942619576055
@@ -4183,7 +4461,7 @@ Rigidbody:
   m_Mass: 1500
   m_Drag: 0
   m_AngularDrag: 0
-  m_CenterOfMass: {x: 0, y: 0.6, z: 0.4000001}
+  m_CenterOfMass: {x: 0.0000006631017, y: 0.6, z: 0.40000004}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
   m_IncludeLayers:
@@ -4382,6 +4660,7 @@ MonoBehaviour:
   gearbox:
     type: 0
     forwardGearRatios:
+    - 4.47
     - 3.84
     - 2.35
     - 1.53
@@ -4493,7 +4772,7 @@ MonoBehaviour:
   externalHandbrake: 0
   externalSteer: 0
   externalClutch: 0
-  externalIgnition: 1
+  externalIgnition: 0
   lockBrakesOnEnable: 0
 --- !u!114 &473252047453181931
 MonoBehaviour:
@@ -4530,7 +4809,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4154771494080302917}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -1603333029, guid: b8873f7cd5fec6f49a4b37228b9b23ac, type: 3}
   m_Name: 
@@ -4544,7 +4823,7 @@ MonoBehaviour:
   viewMinDistance: 3.6
   viewMinAngle: 0
   targetRadius: 5
-  useCustomCameras: 1
+  useCustomCameras: 0
   currentCustomCamera: 0
   customCameras:
   - mode: 4
@@ -4626,6 +4905,22 @@ MonoBehaviour:
   resetVehicleKey: 13
   heightIncrement: 1.6
   resetState: 0
+--- !u!208 &9165977557067410195
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4154771494080302917}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1, y: 1, z: 2.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 1, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &4213688112807764967
 GameObject:
   m_ObjectHideFlags: 0
@@ -4637,7 +4932,7 @@ GameObject:
   - component: {fileID: 113702244328398029}
   - component: {fileID: 5869200465750718760}
   - component: {fileID: 3652894739258785606}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: JP_Brake_RR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4720,7 +5015,7 @@ GameObject:
   - component: {fileID: 1421092979942653484}
   - component: {fileID: 3329052075787575893}
   - component: {fileID: 5085364609311733707}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: SpeedOn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4803,7 +5098,7 @@ GameObject:
   - component: {fileID: 7346504356735019765}
   - component: {fileID: 1960787703508660049}
   - component: {fileID: 6238015054672945857}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: RpmOff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4886,7 +5181,7 @@ GameObject:
   - component: {fileID: 2820079619933566610}
   - component: {fileID: 8358391224141040282}
   - component: {fileID: 1207563732842452413}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: JP_Tire_RL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5179,7 +5474,7 @@ GameObject:
   - component: {fileID: 2622509136218079463}
   - component: {fileID: 2065153491546179018}
   - component: {fileID: 2458000568526767906}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: JP_Tire_RL_Trans
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5264,7 +5559,7 @@ GameObject:
   - component: {fileID: 9055240174882337128}
   - component: {fileID: 5148837895152204862}
   - component: {fileID: 5577241301711764756}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: LHeadLightGlow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5432,7 +5727,7 @@ GameObject:
   - component: {fileID: 3776276366028969596}
   - component: {fileID: 2148712461826657653}
   - component: {fileID: 8612158603884826596}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: LRBrakeGlow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5515,7 +5810,7 @@ GameObject:
   - component: {fileID: 821586076684280222}
   - component: {fileID: 7936914841835514952}
   - component: {fileID: 9014948370352253291}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: RHeadlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5634,7 +5929,7 @@ GameObject:
   - component: {fileID: 6141417441133987193}
   - component: {fileID: 2773297599151748693}
   - component: {fileID: 958373078494943777}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: InteriorGaugesOn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5717,7 +6012,7 @@ GameObject:
   - component: {fileID: 5142812692685496753}
   - component: {fileID: 8389570862435604188}
   - component: {fileID: 5879462299919898212}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: JP_Tire_FR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5803,7 +6098,7 @@ GameObject:
   - component: {fileID: 5411892775275167141}
   - component: {fileID: 112999485802972452}
   - component: {fileID: 2282821571737246234}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: JP_Tire_FL_Blur
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5875,6 +6170,152 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &5350422361355865696
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8917593140747917519}
+  - component: {fileID: 258380176669159994}
+  m_Layer: 6
+  m_Name: Radio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8917593140747917519
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5350422361355865696}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 10942947678159886}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &258380176669159994
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5350422361355865696}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 0.2
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 3
+  MaxDistance: 4
+  Pan2D: 0
+  rolloffMode: 2
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.439917
+      value: 0.9986725
+      inSlope: -1.2504979
+      outSlope: -1.2504979
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.6271469
+      value: 0.50426483
+      inSlope: -5.0019917
+      outSlope: -5.0019917
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.8718689
+      value: 0.05053711
+      inSlope: -0.31262448
+      outSlope: -0.31262448
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.99798584
+      value: 0
+      inSlope: -0.20007975
+      outSlope: -0.20007975
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.083333336
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &5391320838093579939
 GameObject:
   m_ObjectHideFlags: 0
@@ -5886,7 +6327,7 @@ GameObject:
   - component: {fileID: 4839550418708449973}
   - component: {fileID: 4552497443666103990}
   - component: {fileID: 430890546619176643}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: LFogLightGlass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5969,7 +6410,7 @@ GameObject:
   - component: {fileID: 7929433617888420903}
   - component: {fileID: 2462141031401230940}
   - component: {fileID: 3253425333599048197}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: RLDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6055,7 +6496,7 @@ GameObject:
   - component: {fileID: 7923446710152746240}
   - component: {fileID: 205861766713224175}
   - component: {fileID: 7283860249759509945}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: FLWing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6139,7 +6580,7 @@ GameObject:
   - component: {fileID: 3355610859149779534}
   - component: {fileID: 805786433940848060}
   - component: {fileID: 3305142867049823370}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Tailgate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6223,7 +6664,7 @@ GameObject:
   - component: {fileID: 5961825834156298632}
   - component: {fileID: 4426999858485603175}
   - component: {fileID: 3926706680948137981}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: TemperatureOn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6306,7 +6747,7 @@ GameObject:
   - component: {fileID: 281499239500512684}
   - component: {fileID: 5718401738595327715}
   - component: {fileID: 3776433843131680942}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: FuelOn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6389,7 +6830,7 @@ GameObject:
   - component: {fileID: 4402234473705605206}
   - component: {fileID: 4068216555956674724}
   - component: {fileID: 4448332946626181606}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: RFIndicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6600,7 +7041,7 @@ GameObject:
   - component: {fileID: 6825988930971299868}
   - component: {fileID: 6140188139729694042}
   - component: {fileID: 3626433589145592420}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: SteeringWheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6683,7 +7124,7 @@ GameObject:
   - component: {fileID: 5833279391769504914}
   - component: {fileID: 4992484291289938500}
   - component: {fileID: 3923958773525805654}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Interior
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6911,7 +7352,7 @@ GameObject:
   - component: {fileID: 2086773572222000397}
   - component: {fileID: 5642103747758177621}
   - component: {fileID: 1652360959851963692}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: RRDoorGLass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6994,7 +7435,7 @@ GameObject:
   - component: {fileID: 5600759071111173681}
   - component: {fileID: 1897866567758869255}
   - component: {fileID: 596026026805972196}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: JP_Tire_RR_Trans
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7077,7 +7518,7 @@ GameObject:
   - component: {fileID: 3435088330932503774}
   - component: {fileID: 2774180793916678805}
   - component: {fileID: 3229992767923742911}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Suspension_RR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7160,7 +7601,7 @@ GameObject:
   - component: {fileID: 7011388335981275700}
   - component: {fileID: 7066739961751400933}
   - component: {fileID: 6835389758806660512}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: JP_Tire_RR_Blur
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7243,7 +7684,7 @@ GameObject:
   - component: {fileID: 7012506134584343989}
   - component: {fileID: 227682390012115744}
   - component: {fileID: 7462698347290347}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: LRLightOnGlow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7324,7 +7765,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8476670621157224854}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Temperature
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7361,7 +7802,7 @@ GameObject:
   - component: {fileID: 5902071880745189937}
   - component: {fileID: 8249782150851490645}
   - component: {fileID: 5800263323937044933}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: RHeadLightGlow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7529,7 +7970,7 @@ GameObject:
   - component: {fileID: 4228382397301113183}
   - component: {fileID: 6055953274760243234}
   - component: {fileID: 3264233061232959843}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Suspension_RF
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7610,7 +8051,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 969151673491903203}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Speed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7645,7 +8086,7 @@ GameObject:
   - component: {fileID: 4872406558620910145}
   - component: {fileID: 8716300179797891784}
   - component: {fileID: 1564583539989113997}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: TopBrakeLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7730,7 +8171,7 @@ GameObject:
   - component: {fileID: 1722604880194411938}
   - component: {fileID: 1429587581518488622}
   - component: {fileID: 7716724096659449315}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: JP_Brake_FL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7813,7 +8254,7 @@ GameObject:
   - component: {fileID: 5223094626877949417}
   - component: {fileID: 8629042619978673141}
   - component: {fileID: 8834631281969137760}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: LHeadLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7900,7 +8341,7 @@ GameObject:
   - component: {fileID: 4890366998879442123}
   - component: {fileID: 95644586031388085}
   - component: {fileID: 3777779728371589679}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: RRLightOnGlow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7983,7 +8424,7 @@ GameObject:
   - component: {fileID: 5504518006877422364}
   - component: {fileID: 3395904378751754098}
   - component: {fileID: 1859691544515850461}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: WindscreenGlass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8066,7 +8507,7 @@ GameObject:
   - component: {fileID: 4243060842426576539}
   - component: {fileID: 8215844984315894281}
   - component: {fileID: 8220072698785019966}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: FRWing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8150,7 +8591,7 @@ GameObject:
   - component: {fileID: 6166514573318803310}
   - component: {fileID: 9145078653629859462}
   - component: {fileID: 8874208601883390209}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: TopBrakeGlow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8233,7 +8674,7 @@ GameObject:
   - component: {fileID: 2248784473337427805}
   - component: {fileID: 6615860397239410687}
   - component: {fileID: 2903480383160663117}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: RpmOn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8316,7 +8757,7 @@ GameObject:
   - component: {fileID: 2351725978716166492}
   - component: {fileID: 6227772739235671531}
   - component: {fileID: 5767381801199001044}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: LRTaillight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8432,7 +8873,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7591981894827751565}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Wheel_FL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8468,7 +8909,7 @@ GameObject:
   - component: {fileID: 3426860003364841151}
   - component: {fileID: 569923411900480299}
   - component: {fileID: 715387174071891076}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: LFIndicatorGlow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8551,7 +8992,7 @@ GameObject:
   - component: {fileID: 748322161510513078}
   - component: {fileID: 1427199079674481602}
   - component: {fileID: 5307273303694100280}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: WarningLightsOn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8632,7 +9073,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7312307049091143939}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: RPM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8665,7 +9106,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8052695967548350773}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Fuel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8759,7 +9200,7 @@ GameObject:
   - component: {fileID: 6841872155215612421}
   - component: {fileID: 7458214738742285916}
   - component: {fileID: 7410300389287641420}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: LRDoorInt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8973,18 +9414,18 @@ ReflectionProbe:
   m_Mode: 1
   m_RefreshMode: 1
   m_TimeSlicingMode: 1
-  m_Resolution: 256
+  m_Resolution: 512
   m_UpdateFrequency: 0
-  m_BoxSize: {x: 0.5, y: 0.5, z: 0.5}
+  m_BoxSize: {x: 5, y: 3, z: 5}
   m_BoxOffset: {x: 0, y: 0, z: 0}
-  m_NearClip: 0.3
-  m_FarClip: 1000
+  m_NearClip: 0.01
+  m_FarClip: 100
   m_ShadowDistance: 0
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 1, g: 1, b: 1, a: 0}
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967039
+    m_Bits: 247
   m_IntensityMultiplier: 1
   m_BlendDistance: 1
   m_HDR: 1
@@ -9260,7 +9701,7 @@ GameObject:
   - component: {fileID: 3980940483668903728}
   - component: {fileID: 8996866868472930332}
   - component: {fileID: 1449167450606553258}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: JP_Tire_FL_Trans
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9343,7 +9784,7 @@ GameObject:
   - component: {fileID: 7655462039019037804}
   - component: {fileID: 3578190169029863197}
   - component: {fileID: 3223016815115411848}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: JP_Tire_FR_Trans
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9426,7 +9867,7 @@ GameObject:
   - component: {fileID: 3386172105549000066}
   - component: {fileID: 796143985596282054}
   - component: {fileID: 5002158371103862811}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: LRLightGlass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9509,7 +9950,7 @@ GameObject:
   - component: {fileID: 4110485377876450367}
   - component: {fileID: 6804327552026232887}
   - component: {fileID: 8286997862009265245}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Suspension_LF
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9592,7 +10033,7 @@ GameObject:
   - component: {fileID: 5996900143633450319}
   - component: {fileID: 8739953993823563236}
   - component: {fileID: 8834702833421611466}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: RRTaillight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9679,7 +10120,7 @@ GameObject:
   - component: {fileID: 2680114501048914721}
   - component: {fileID: 6689406991971528139}
   - component: {fileID: 3642371244559396338}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: JP_Brake_RL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9762,7 +10203,7 @@ GameObject:
   - component: {fileID: 5332232809356718098}
   - component: {fileID: 6100799996383381048}
   - component: {fileID: 4629702118861802230}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: LHeadLightGlass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9845,7 +10286,7 @@ GameObject:
   - component: {fileID: 2263821338534288967}
   - component: {fileID: 6378156209691349721}
   - component: {fileID: 7644488616512269767}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: SpeedOff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9928,7 +10369,7 @@ GameObject:
   - component: {fileID: 2600047203247946299}
   - component: {fileID: 483153339426293080}
   - component: {fileID: 999122298793110861}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: JP_Tire_FL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10014,7 +10455,7 @@ GameObject:
   - component: {fileID: 7309319601696270984}
   - component: {fileID: 2563024264416732811}
   - component: {fileID: 3885028004974193660}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: HandBrakeLightOff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10097,7 +10538,7 @@ GameObject:
   - component: {fileID: 5845506147214042434}
   - component: {fileID: 4483167070088570598}
   - component: {fileID: 2569433930801374089}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: LRDoorGlass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10180,7 +10621,7 @@ GameObject:
   - component: {fileID: 1563871920813379741}
   - component: {fileID: 3617018619776364538}
   - component: {fileID: 6011755477906106313}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: FPlate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10263,7 +10704,7 @@ GameObject:
   - component: {fileID: 967133010612112839}
   - component: {fileID: 7562650055491754690}
   - component: {fileID: 8396782716985925318}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: InteriorMirror
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10347,7 +10788,7 @@ GameObject:
   - component: {fileID: 753468044526949654}
   - component: {fileID: 6516563487186927868}
   - component: {fileID: 1049121971165173181}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: RRDoorInt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10431,7 +10872,7 @@ GameObject:
   - component: {fileID: 2284805071519101314}
   - component: {fileID: 3319743812933203564}
   - component: {fileID: 1026572810123107052}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: FRDoorInt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10635,7 +11076,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PlayerToVehicle, Assembly-CSharp
-        m_MethodName: GetInCar
+        m_MethodName: evaluateOutInCar
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

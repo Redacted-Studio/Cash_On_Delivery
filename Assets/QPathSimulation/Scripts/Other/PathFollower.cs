@@ -142,16 +142,16 @@ public class PathFollower : MonoBehaviour {
                 }
             }
 
-            int maxSpeed = UnityEngine.Random.Range(4, 8);
+            int maxSpeed = UnityEngine.Random.Range(5, 8);
             if (!endpoint && dist < 0.5f) {
                 waitingTime += Time.deltaTime;
                 tar = 0.1f;
             } else {//endpoint || dist >= 0.5f
                 tar = 1f + 0.2f * dist - 0.4f * Mathf.Pow(dist, 2) + 0.4f * Mathf.Pow(dist, 3);
                 tar = tar > 3 ? maxSpeed/2 : tar;
-            }
+            }   
             if (dist >= 0.4f) {
-                tar = angle < maxSpeed ? maxSpeed : (angle / maxSpeed / 2);
+                tar = angle < maxSpeed ? maxSpeed : maxSpeed / (angle / 3);
             }
             target = path[index].PosOfB + dir * back;
             yield return new WaitForFixedUpdate();

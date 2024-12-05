@@ -31,8 +31,8 @@ public class BoxPaket : MonoBehaviour
             dipegang = false;
             CekTempat();
         }
-
-        ShowWp();
+        if(Quest.Accepted)
+            ShowWp();
     }
 
     protected void ShowWp()

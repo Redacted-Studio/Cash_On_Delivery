@@ -3,6 +3,7 @@ using SUPERCharacter;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using VehiclePhysics;
 using VehiclePhysics.UI;
 
@@ -46,6 +47,9 @@ public class PlayerToVehicle : MonoBehaviour
     // Camera Handler
     [SerializeField] Camera MainCams;
 
+    [SerializeField] Image Hunger;
+    [SerializeField] Image Thrist;
+
     private void Awake()
     {
         _instance = this;
@@ -57,6 +61,13 @@ public class PlayerToVehicle : MonoBehaviour
         {
             return _instance;
         }
+    }
+
+    protected void HungerThirstUIHandler()
+    {
+        Hunger.fillAmount = superCharCont.currentSurvivalStats.Hunger / 100f;
+        Thrist.fillAmount = superCharCont.currentSurvivalStats.Hydration / 100f;
+
     }
 
     public void Makan(float val)
@@ -182,6 +193,7 @@ public class PlayerToVehicle : MonoBehaviour
                     break;
                 }
         }
+        HungerThirstUIHandler();
 
         //superCharCont.currentSurvivalStats.Hunger
         //superCharCont.currentSurvivalStats.Hydration
