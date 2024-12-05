@@ -7,8 +7,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: UVCheck
-    second: {fileID: 2100000, guid: 92d0b9bdf9b03ff458da3106027a74bd, type: 2}
+      name: Material2
+    second: {fileID: 2100000, guid: 95a7a8f34995fc445926bf45c297aad4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material3
+    second: {fileID: 2100000, guid: 7ad74e17ebbb450438aea9cd6ddb9c71, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Materilal1
+    second: {fileID: 2100000, guid: 666cac808a687c44b8ef06514159bfea, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
