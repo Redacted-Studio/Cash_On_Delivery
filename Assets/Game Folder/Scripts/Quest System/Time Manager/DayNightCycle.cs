@@ -19,7 +19,7 @@ public class DayNightCycle : MonoBehaviour
     void Update()
     {
         if (Preset == null) return;
-        TimeOfDay = TimeManager.Hour;
+        // TimeOfDay = TimeManager.Hour;
         UpdateLight(TimeOfDay/24f);
     }
     
