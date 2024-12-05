@@ -433,7 +433,7 @@ GameObject:
   - component: {fileID: 9013666709527457562}
   - component: {fileID: 6055534704628563709}
   m_Layer: 12
-  m_Name: tesRuko2
+  m_Name: Ruko1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
