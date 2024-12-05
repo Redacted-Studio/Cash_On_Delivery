@@ -89,6 +89,11 @@ public class PathFinder : MonoBehaviour {
             Time.timeScale = timeScale;
         }
     }
+
+    public void SetMaxCar(int val)
+    {
+        maxCars = val;
+    }
     /// <summary>
     /// Stores the graph data
     /// </summary>
