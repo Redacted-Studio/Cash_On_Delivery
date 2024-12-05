@@ -10,6 +10,7 @@ public class AIBukaPintu : MonoBehaviour
     public LayerMask m_LayerMask;
     public void BukaPintu()
     {
+        if (animator == null) return;
         animator.SetBool("Terbukalah", true);
     }
 

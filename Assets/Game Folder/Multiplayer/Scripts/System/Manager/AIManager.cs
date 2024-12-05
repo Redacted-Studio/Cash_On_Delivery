@@ -93,9 +93,9 @@ public class AIManager : MonoBehaviour
     {
         while (true)
         {
-            if (RegAI.Count > MaxAILimit) break;
+            if (RegAI.Count >= MaxAILimit) break;
             SpawnAIFun();
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(2);
         }
     }
 
@@ -110,8 +110,8 @@ public class AIManager : MonoBehaviour
         RegisterAI(norm);
         norm.RegisterNPCProfile(NPCManager.Instance.GetRandomNPC());
         norm.profile.isRoaming = true;
-        norm.isHavingDestination = true;
         norm.SetDestination(GetRandomDestination());
+        norm.isHavingDestination = true;
     }
 
     public void SetAILimit(int Limit)

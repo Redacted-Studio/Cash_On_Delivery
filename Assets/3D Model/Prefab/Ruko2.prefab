@@ -185,9 +185,9 @@ GameObject:
   - component: {fileID: 3989888065450753853}
   - component: {fileID: 4870451933609023533}
   - component: {fileID: 6201450578058284378}
-  - component: {fileID: 6066802020190066384}
   - component: {fileID: 7023559135400645754}
   - component: {fileID: 8237814250718245366}
+  - component: {fileID: 5036385821927905643}
   m_Layer: 0
   m_Name: PintuRuko2
   m_TagString: Untagged
@@ -260,25 +260,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &6066802020190066384
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4581230419242717652}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_OverrideArea: 1
-  m_Area: 1
-  m_OverrideGenerateLinks: 0
-  m_GenerateLinks: 0
-  m_IgnoreFromBuild: 0
-  m_ApplyToChildren: 1
-  m_AffectedAgents: ffffffff
 --- !u!64 &7023559135400645754
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -322,6 +303,22 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!208 &5036385821927905643
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4581230419242717652}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.15, y: 1.7580001, z: 0.8880001}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.15, y: 1.7580001, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &6239088482795929227
 GameObject:
   m_ObjectHideFlags: 0

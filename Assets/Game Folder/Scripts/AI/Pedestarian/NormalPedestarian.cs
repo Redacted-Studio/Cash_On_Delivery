@@ -137,18 +137,20 @@ public class NormalPedestarian : AIBase
     {
         if (!destination) return;
 
-        if(pedState != pedestarianState.GO_TO_DESTINATION)
-        {
-            moveTo(destination.transform);
-            pedState = pedestarianState.GO_TO_DESTINATION;
-        }
+        moveTo(destination.transform);
+        StartCoroutine(WaitForTimes(3));
+    }
 
-        if (agent.remainingDistance <= destination.Radius && isHavingDestination)
+    IEnumerator WaitForTimes(float time)
+    {
+        while (true)
         {
-            if (destination.getDestinationType() == PedestarianDestinationType.SHOP) RemoveDestination();
-
-            pedState = pedestarianState.IDLE;
-            isHavingDestination = false;
+            yield return new WaitForSeconds(time);
+            if (agent.remainingDistance <= destination.Radius)
+            {
+                RemoveDestination();
+            }
+            break;
         }
     }
 
@@ -172,10 +174,8 @@ public class NormalPedestarian : AIBase
     /// </summary>
     public void SetDestination(PedestarianDestination destinations)
     {
-        float dist = Vector3.Distance(destinations.transform.position, transform.position);
         destination = destinations;
         isHavingDestination = true;
-        
     }
 
     /// <summary>

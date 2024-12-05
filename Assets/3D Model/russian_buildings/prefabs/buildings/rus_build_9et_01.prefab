@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 65242799396170966}
   - component: {fileID: 65905338261699446}
   - component: {fileID: 65917000320674336}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: rus_build_9et_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -339,7 +339,7 @@ GameObject:
   - component: {fileID: 4976500616966642}
   - component: {fileID: 33874208940751844}
   - component: {fileID: 23533116940337958}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: rus_build_dec_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -422,7 +422,7 @@ GameObject:
   - component: {fileID: 4830433769665958}
   - component: {fileID: 33595968196554238}
   - component: {fileID: 23860648689067090}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Regroup14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -505,7 +505,7 @@ GameObject:
   - component: {fileID: 4946586598596800}
   - component: {fileID: 33101421611264784}
   - component: {fileID: 23645818116257050}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Regroup14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -588,7 +588,7 @@ GameObject:
   - component: {fileID: 4049920547058874}
   - component: {fileID: 33968052271089128}
   - component: {fileID: 23447264381823458}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Regroup13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
