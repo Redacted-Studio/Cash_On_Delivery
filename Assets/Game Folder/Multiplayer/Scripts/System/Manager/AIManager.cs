@@ -27,6 +27,7 @@ public class AIManager : MonoBehaviour
 
     private void Start()
     {
+        StartCoroutine(spawnRoutine());
     }
 
     #region Public Function
@@ -79,15 +80,22 @@ public class AIManager : MonoBehaviour
 
     private void LateUpdate()
     {
-        for (int i = 0; RegAI.Count < MaxAILimit; i++)
-        {
-            SpawnAIFun();
-        }
+        if (RegAI.Count < MaxAILimit)
+            StartCoroutine(spawnRoutine());
 
         foreach (NormalPedestarian ai in RegAI)
         {
             if (ai.isHavingDestination == false)
                 ai.SetDestination(GetRandomDestination());
+        }
+    }
+    IEnumerator spawnRoutine()
+    {
+        while (true)
+        {
+            if (RegAI.Count > MaxAILimit) break;
+            SpawnAIFun();
+            yield return new WaitForSeconds(1);
         }
     }
 
@@ -104,6 +112,11 @@ public class AIManager : MonoBehaviour
         norm.profile.isRoaming = true;
         norm.isHavingDestination = true;
         norm.SetDestination(GetRandomDestination());
+    }
+
+    public void SetAILimit(int Limit)
+    {
+        MaxAILimit = Limit;
     }
 
     public PedestarianDestination GetRandomDestination()

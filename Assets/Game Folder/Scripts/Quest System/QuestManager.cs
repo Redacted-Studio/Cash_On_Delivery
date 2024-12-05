@@ -27,6 +27,9 @@ public class QuestManager : MonoBehaviour
 
     [Header("PAPER PREFAB")]
     public List<GameObject> Papers;
+
+    [SerializeField][Range(1, 24)] private int maxTimeBeforeDeleted;
+    [SerializeField][Range(1, 24)] private int minTimeBeforeDeleted;
     private void Awake()
     {
         _Instance = this;
@@ -57,6 +60,7 @@ public class QuestManager : MonoBehaviour
         paket.Position = tempat.tempatNerimaPaket;
         paket.NomorTempat = tempat.GetBuildingNumber();
         paket.NamaPaket = "Paket " + tempat.GetOwner().Nama;
+        paket.TimeBeforeDeleted = UnityEngine.Random.Range(minTimeBeforeDeleted, maxTimeBeforeDeleted);
         float randTar = UnityEngine.Random.Range(50f, 150f);
         paket.Tariff = distance * randTar;
         tempat.GetOwner().MesenPaket = true;
@@ -95,6 +99,36 @@ public class QuestManager : MonoBehaviour
         }
     }
 
+    public void PenguranganWaktu()
+    {
+        foreach(Quest q in quests)
+        {
+            q.TimeBeforeDeleted--;
+        }
+    }
+
+    public void Cancel(int ID)
+    {
+        for (int i = 0; i < quests.Count; i++)
+        {
+            if (quests[i].QuestID == ID)
+            {
+                Destroy(quests[i].Waypoints);
+                ShowNotification("Gagal", "Paket " + quests[i].NamaPaket + " Telah Di cancel");
+                quests.RemoveAt(i);
+                textMeshProUGUI.text = "Quest Available : " + quests.Count;
+                for (int j = 0; j < parentUIHP.childCount; j++)
+                {
+                    OrderanUI uii = parentUIHP.GetChild(j).GetComponent<OrderanUI>();
+                    if (uii.QuestID == ID)
+                    {
+                        Destroy(uii.gameObject);
+                    }
+                }
+            }
+        }
+    }
+
     public void NerimaQuest(int ID)
     {
         Quest questss = null;
@@ -112,7 +146,7 @@ public class QuestManager : MonoBehaviour
         questss.Accepted = true;
         GameObject ist = Instantiate(HPUIPref, parentUIHP);
         OrderanUI uis = ist.GetComponent<OrderanUI>();
-        uis.SetUI(questss.Penerima, questss.Alamat + " No." + questss.NomorTempat.ToString(), ID);
+        uis.SetUI(questss.Penerima, questss.Alamat + " No." + questss.NomorTempat.ToString(), ID, questss.TimeBeforeDeleted);
         ShowNotification("Orderan Baru", "Orderan " + questss.NamaPaket);
         GameObject wp = Instantiate(WaypointPrefab, questss.Position);
         questss.Waypoints = wp;
@@ -148,4 +182,7 @@ public class Quest
     public float Tariff;
     public Transform Position;
     public GameObject Waypoints;
+
+    [Tooltip("In Hours")]
+    public float TimeBeforeDeleted; 
 }

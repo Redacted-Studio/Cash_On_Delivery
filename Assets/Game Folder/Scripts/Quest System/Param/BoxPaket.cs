@@ -44,6 +44,11 @@ public class BoxPaket : MonoBehaviour
         } else Quest.Waypoints.SetActive(false);
     }
 
+    protected void CekWaktu()
+    {
+        if(Quest.TimeBeforeDeleted < 0) QuestManager.Instance.Cancel(Quest.QuestID);
+    }
+
     protected void CekTempat()
     {
         float dist = Vector3.Distance(transform.position, Quest.Position.position);

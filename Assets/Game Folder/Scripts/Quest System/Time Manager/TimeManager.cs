@@ -57,6 +57,7 @@ public class TimeManager : MonoBehaviour
         if (Minute >= 60)
         {
             Hour++;
+            QuestManager.Instance.PenguranganWaktu();
             onHourChange?.Invoke();
             Minute = 0;
         }
